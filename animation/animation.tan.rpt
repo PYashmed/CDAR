@@ -1,0 +1,604 @@
+Classic Timing Analyzer report for animation
+Mon Nov 21 11:54:24 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk1khz'
+  7. Clock Hold: 'clk1khz'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------------------------+----------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                    ; To       ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------------------------+----------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 5.582 ns                         ; dog                                     ; movesetr ; --         ; clk1khz  ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 14.191 ns                        ; dotmatric:u1|bicolor_dot_matrix:u2|g[2] ; g[2]     ; off        ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 11.635 ns                        ; off                                     ; row[4]   ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 0.810 ns                         ; rst                                     ; ani[1]   ; --         ; clk1khz  ; 0            ;
+; Clock Setup: 'clk1khz'       ; N/A                                      ; None          ; 95.66 MHz ( period = 10.454 ns ) ; dogisr                                  ; movesetr ; clk1khz    ; clk1khz  ; 0            ;
+; Clock Hold: 'clk1khz'        ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; movesetr                                ; dogisr   ; clk1khz    ; clk1khz  ; 19           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                         ;          ;            ;          ; 19           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------------------------+----------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM1270T144C5      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk1khz         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; off             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk1khz'                                                                                                                                                                                                                                                           ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                           ; To                                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 95.66 MHz ( period = 10.454 ns )                    ; dogisr                         ; movesetr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.026 ns                ;
+; N/A                                     ; 99.26 MHz ( period = 10.075 ns )                    ; mouseisr                       ; movesetr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.647 ns                ;
+; N/A                                     ; 102.88 MHz ( period = 9.720 ns )                    ; movedone                       ; movesetr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.292 ns                ;
+; N/A                                     ; 103.15 MHz ( period = 9.695 ns )                    ; catisr                         ; movesetr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.267 ns                ;
+; N/A                                     ; 103.25 MHz ( period = 9.685 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.976 ns                ;
+; N/A                                     ; 105.34 MHz ( period = 9.493 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.784 ns                ;
+; N/A                                     ; 105.94 MHz ( period = 9.439 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.730 ns                ;
+; N/A                                     ; 107.79 MHz ( period = 9.277 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|dog[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.166 ns                ;
+; N/A                                     ; 107.82 MHz ( period = 9.275 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|cat[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.164 ns                ;
+; N/A                                     ; 108.41 MHz ( period = 9.224 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.515 ns                ;
+; N/A                                     ; 108.93 MHz ( period = 9.180 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.471 ns                ;
+; N/A                                     ; 110.58 MHz ( period = 9.043 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.334 ns                ;
+; N/A                                     ; 110.72 MHz ( period = 9.032 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.323 ns                ;
+; N/A                                     ; 111.06 MHz ( period = 9.004 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.295 ns                ;
+; N/A                                     ; 111.22 MHz ( period = 8.991 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.282 ns                ;
+; N/A                                     ; 111.26 MHz ( period = 8.988 ns )                    ; movedone                       ; enmove                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.560 ns                ;
+; N/A                                     ; 111.52 MHz ( period = 8.967 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.258 ns                ;
+; N/A                                     ; 112.01 MHz ( period = 8.928 ns )                    ; movedone                       ; animal.11                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 112.01 MHz ( period = 8.928 ns )                    ; movedone                       ; animal.01                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 112.01 MHz ( period = 8.928 ns )                    ; movedone                       ; animal.10                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 112.01 MHz ( period = 8.928 ns )                    ; movedone                       ; animal.00                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 112.20 MHz ( period = 8.913 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.204 ns                ;
+; N/A                                     ; 113.26 MHz ( period = 8.829 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.120 ns                ;
+; N/A                                     ; 113.30 MHz ( period = 8.826 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.117 ns                ;
+; N/A                                     ; 113.58 MHz ( period = 8.804 ns )                    ; divide:u2|cntp[6]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.095 ns                ;
+; N/A                                     ; 114.26 MHz ( period = 8.752 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.043 ns                ;
+; N/A                                     ; 114.35 MHz ( period = 8.745 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.036 ns                ;
+; N/A                                     ; 114.82 MHz ( period = 8.709 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.000 ns                ;
+; N/A                                     ; 115.09 MHz ( period = 8.689 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.980 ns                ;
+; N/A                                     ; 115.78 MHz ( period = 8.637 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.928 ns                ;
+; N/A                                     ; 115.93 MHz ( period = 8.626 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.917 ns                ;
+; N/A                                     ; 116.17 MHz ( period = 8.608 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.899 ns                ;
+; N/A                                     ; 116.28 MHz ( period = 8.600 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.891 ns                ;
+; N/A                                     ; 116.29 MHz ( period = 8.599 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|dog[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.488 ns                ;
+; N/A                                     ; 116.32 MHz ( period = 8.597 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|cat[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.486 ns                ;
+; N/A                                     ; 116.69 MHz ( period = 8.570 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.861 ns                ;
+; N/A                                     ; 116.73 MHz ( period = 8.567 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.858 ns                ;
+; N/A                                     ; 116.88 MHz ( period = 8.556 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.847 ns                ;
+; N/A                                     ; 117.21 MHz ( period = 8.532 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.823 ns                ;
+; N/A                                     ; 117.34 MHz ( period = 8.522 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|cat[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.411 ns                ;
+; N/A                                     ; 117.36 MHz ( period = 8.521 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|dog[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.410 ns                ;
+; N/A                                     ; 117.41 MHz ( period = 8.517 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.808 ns                ;
+; N/A                                     ; 117.44 MHz ( period = 8.515 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|mouse[5] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.404 ns                ;
+; N/A                                     ; 117.81 MHz ( period = 8.488 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.779 ns                ;
+; N/A                                     ; 117.83 MHz ( period = 8.487 ns )                    ; dotmatric:u1|divide:u4|cntp[5] ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.778 ns                ;
+; N/A                                     ; 117.95 MHz ( period = 8.478 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.769 ns                ;
+; N/A                                     ; 118.04 MHz ( period = 8.472 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.763 ns                ;
+; N/A                                     ; 118.23 MHz ( period = 8.458 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[4]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.749 ns                ;
+; N/A                                     ; 118.29 MHz ( period = 8.454 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.745 ns                ;
+; N/A                                     ; 118.58 MHz ( period = 8.433 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.724 ns                ;
+; N/A                                     ; 118.62 MHz ( period = 8.430 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.721 ns                ;
+; N/A                                     ; 118.93 MHz ( period = 8.408 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.699 ns                ;
+; N/A                                     ; 119.32 MHz ( period = 8.381 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.672 ns                ;
+; N/A                                     ; 119.36 MHz ( period = 8.378 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.669 ns                ;
+; N/A                                     ; 119.36 MHz ( period = 8.378 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.669 ns                ;
+; N/A                                     ; 119.37 MHz ( period = 8.377 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.668 ns                ;
+; N/A                                     ; 119.66 MHz ( period = 8.357 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.648 ns                ;
+; N/A                                     ; 119.70 MHz ( period = 8.354 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.645 ns                ;
+; N/A                                     ; 120.28 MHz ( period = 8.314 ns )                    ; divide:u2|cntp[6]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.605 ns                ;
+; N/A                                     ; 120.44 MHz ( period = 8.303 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.594 ns                ;
+; N/A                                     ; 120.48 MHz ( period = 8.300 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.591 ns                ;
+; N/A                                     ; 120.54 MHz ( period = 8.296 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.587 ns                ;
+; N/A                                     ; 120.61 MHz ( period = 8.291 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.582 ns                ;
+; N/A                                     ; 120.93 MHz ( period = 8.269 ns )                    ; move[0]                        ; mouseisr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.560 ns                ;
+; N/A                                     ; 120.95 MHz ( period = 8.268 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.559 ns                ;
+; N/A                                     ; 121.04 MHz ( period = 8.262 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.553 ns                ;
+; N/A                                     ; 121.27 MHz ( period = 8.246 ns )                    ; divide:u2|cntp[6]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.537 ns                ;
+; N/A                                     ; 121.54 MHz ( period = 8.228 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.519 ns                ;
+; N/A                                     ; 121.55 MHz ( period = 8.227 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.518 ns                ;
+; N/A                                     ; 121.58 MHz ( period = 8.225 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.516 ns                ;
+; N/A                                     ; 121.61 MHz ( period = 8.223 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|clkp         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.514 ns                ;
+; N/A                                     ; 121.97 MHz ( period = 8.199 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[4]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.490 ns                ;
+; N/A                                     ; 122.47 MHz ( period = 8.165 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.456 ns                ;
+; N/A                                     ; 122.59 MHz ( period = 8.157 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.448 ns                ;
+; N/A                                     ; 122.76 MHz ( period = 8.146 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|cat[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.035 ns                ;
+; N/A                                     ; 122.77 MHz ( period = 8.145 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|dog[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.034 ns                ;
+; N/A                                     ; 122.82 MHz ( period = 8.142 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|cat[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.031 ns                ;
+; N/A                                     ; 122.87 MHz ( period = 8.139 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|mouse[5] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.028 ns                ;
+; N/A                                     ; 122.88 MHz ( period = 8.138 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|dog[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.027 ns                ;
+; N/A                                     ; 122.91 MHz ( period = 8.136 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.427 ns                ;
+; N/A                                     ; 123.18 MHz ( period = 8.118 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.409 ns                ;
+; N/A                                     ; 123.82 MHz ( period = 8.076 ns )                    ; move[1]                        ; mouseisr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.367 ns                ;
+; N/A                                     ; 124.84 MHz ( period = 8.010 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[4]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.301 ns                ;
+; N/A                                     ; 125.22 MHz ( period = 7.986 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[4]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.277 ns                ;
+; N/A                                     ; 125.28 MHz ( period = 7.982 ns )                    ; divide:u2|cntp[8]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.273 ns                ;
+; N/A                                     ; 125.28 MHz ( period = 7.982 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|cntp[3]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.273 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 126.12 MHz ( period = 7.929 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.220 ns                ;
+; N/A                                     ; 127.37 MHz ( period = 7.851 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.142 ns                ;
+; N/A                                     ; 128.06 MHz ( period = 7.809 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[6]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 128.37 MHz ( period = 7.790 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|divide:u4|cntp[3]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.081 ns                ;
+; N/A                                     ; 128.55 MHz ( period = 7.779 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; divide:u2|cntp[2]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.070 ns                ;
+; N/A                                     ; 128.60 MHz ( period = 7.776 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.067 ns                ;
+; N/A                                     ; 128.65 MHz ( period = 7.773 ns )                    ; divide:u2|cntp[8]              ; divide:u2|cntp[8]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.064 ns                ;
+; N/A                                     ; 129.23 MHz ( period = 7.738 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|dog[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.627 ns                ;
+; N/A                                     ; 129.23 MHz ( period = 7.738 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|dog[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.627 ns                ;
+; N/A                                     ; 129.23 MHz ( period = 7.738 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|dog[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.627 ns                ;
+; N/A                                     ; 129.65 MHz ( period = 7.713 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 129.82 MHz ( period = 7.703 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.994 ns                ;
+; N/A                                     ; 129.99 MHz ( period = 7.693 ns )                    ; move[0]                        ; dogisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 130.07 MHz ( period = 7.688 ns )                    ; move[0]                        ; catisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.979 ns                ;
+; N/A                                     ; 130.43 MHz ( period = 7.667 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.958 ns                ;
+; N/A                                     ; 130.82 MHz ( period = 7.644 ns )                    ; moveset                        ; mouseisr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.935 ns                ;
+; N/A                                     ; 131.34 MHz ( period = 7.614 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.905 ns                ;
+; N/A                                     ; 131.51 MHz ( period = 7.604 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.895 ns                ;
+; N/A                                     ; 131.53 MHz ( period = 7.603 ns )                    ; dotmatric:u1|divide:u4|cntp[6] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.894 ns                ;
+; N/A                                     ; 132.36 MHz ( period = 7.555 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.846 ns                ;
+; N/A                                     ; 132.47 MHz ( period = 7.549 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|cnt8:u1|cnt[1]         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.840 ns                ;
+; N/A                                     ; 132.96 MHz ( period = 7.521 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.812 ns                ;
+; N/A                                     ; 132.98 MHz ( period = 7.520 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.811 ns                ;
+; N/A                                     ; 133.33 MHz ( period = 7.500 ns )                    ; move[1]                        ; dogisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.791 ns                ;
+; N/A                                     ; 133.40 MHz ( period = 7.496 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.787 ns                ;
+; N/A                                     ; 133.42 MHz ( period = 7.495 ns )                    ; move[1]                        ; catisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.786 ns                ;
+; N/A                                     ; 133.48 MHz ( period = 7.492 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.783 ns                ;
+; N/A                                     ; 133.51 MHz ( period = 7.490 ns )                    ; divide:u2|cntp[3]              ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.781 ns                ;
+; N/A                                     ; 133.56 MHz ( period = 7.487 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|dog[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.376 ns                ;
+; N/A                                     ; 133.56 MHz ( period = 7.487 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|dog[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.376 ns                ;
+; N/A                                     ; 133.56 MHz ( period = 7.487 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|dog[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.376 ns                ;
+; N/A                                     ; 133.85 MHz ( period = 7.471 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|cat[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.360 ns                ;
+; N/A                                     ; 133.92 MHz ( period = 7.467 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|dog[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.356 ns                ;
+; N/A                                     ; 134.08 MHz ( period = 7.458 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.749 ns                ;
+; N/A                                     ; 135.10 MHz ( period = 7.402 ns )                    ; dotmatric:u1|divide:u4|cntp[5] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.693 ns                ;
+; N/A                                     ; 135.37 MHz ( period = 7.387 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.678 ns                ;
+; N/A                                     ; 135.70 MHz ( period = 7.369 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.660 ns                ;
+; N/A                                     ; 136.76 MHz ( period = 7.312 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.603 ns                ;
+; N/A                                     ; 136.86 MHz ( period = 7.307 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; divide:u2|cntp[2]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.598 ns                ;
+; N/A                                     ; 136.99 MHz ( period = 7.300 ns )                    ; dotmatric:u1|cnt8:u1|cnt[0]    ; dotmatric:u1|cnt8:u1|cnt[1]         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.591 ns                ;
+; N/A                                     ; 137.08 MHz ( period = 7.295 ns )                    ; move[0]                        ; moveset                             ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.586 ns                ;
+; N/A                                     ; 137.17 MHz ( period = 7.290 ns )                    ; dotmatric:u1|divide:u4|cntp[5] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.581 ns                ;
+; N/A                                     ; 137.46 MHz ( period = 7.275 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.566 ns                ;
+; N/A                                     ; 137.82 MHz ( period = 7.256 ns )                    ; dotmatric:u1|divide:u4|cntp[5] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.547 ns                ;
+; N/A                                     ; 138.10 MHz ( period = 7.241 ns )                    ; dotmatric:u1|divide:u4|cntp[4] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.532 ns                ;
+; N/A                                     ; 138.26 MHz ( period = 7.233 ns )                    ; divide:u2|cntp[4]              ; divide:u2|cntp[4]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.524 ns                ;
+; N/A                                     ; 139.04 MHz ( period = 7.192 ns )                    ; divide:u2|cntp[6]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.483 ns                ;
+; N/A                                     ; 140.04 MHz ( period = 7.141 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.432 ns                ;
+; N/A                                     ; 140.08 MHz ( period = 7.139 ns )                    ; moveset                        ; ani[0]                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 140.08 MHz ( period = 7.139 ns )                    ; moveset                        ; ani[1]                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 140.08 MHz ( period = 7.139 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 140.11 MHz ( period = 7.137 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|clkp         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.428 ns                ;
+; N/A                                     ; 140.81 MHz ( period = 7.102 ns )                    ; move[1]                        ; moveset                             ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.393 ns                ;
+; N/A                                     ; 141.48 MHz ( period = 7.068 ns )                    ; moveset                        ; dogisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.359 ns                ;
+; N/A                                     ; 141.58 MHz ( period = 7.063 ns )                    ; moveset                        ; catisr                              ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.354 ns                ;
+; N/A                                     ; 142.15 MHz ( period = 7.035 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|cat[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.924 ns                ;
+; N/A                                     ; 143.14 MHz ( period = 6.986 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[3]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.277 ns                ;
+; N/A                                     ; 144.34 MHz ( period = 6.928 ns )                    ; dotmatric:u1|divide:u4|cntp[8] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.219 ns                ;
+; N/A                                     ; 144.63 MHz ( period = 6.914 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|cntp[9]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.205 ns                ;
+; N/A                                     ; 146.52 MHz ( period = 6.825 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.116 ns                ;
+; N/A                                     ; 146.61 MHz ( period = 6.821 ns )                    ; divide:u2|cntp[2]              ; divide:u2|cntp[2]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.112 ns                ;
+; N/A                                     ; 147.19 MHz ( period = 6.794 ns )                    ; dotmatric:u1|divide:u4|cntp[5] ; dotmatric:u1|divide:u4|cntp[5]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 6.085 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|dog[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.570 ns                ;
+; N/A                                     ; 149.93 MHz ( period = 6.670 ns )                    ; moveset                        ; moveset                             ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.961 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|cat[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.557 ns                ;
+; N/A                                     ; 151.17 MHz ( period = 6.615 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|cat[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.504 ns                ;
+; N/A                                     ; 151.17 MHz ( period = 6.615 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|cat[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.504 ns                ;
+; N/A                                     ; 151.17 MHz ( period = 6.615 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|cat[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.504 ns                ;
+; N/A                                     ; 151.33 MHz ( period = 6.608 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|mouse[0] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.497 ns                ;
+; N/A                                     ; 151.33 MHz ( period = 6.608 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|mouse[3] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.497 ns                ;
+; N/A                                     ; 151.33 MHz ( period = 6.608 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|mouse[5] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.497 ns                ;
+; N/A                                     ; 151.95 MHz ( period = 6.581 ns )                    ; divide:u2|cntp[5]              ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.872 ns                ;
+; N/A                                     ; 152.02 MHz ( period = 6.578 ns )                    ; dotmatric:u1|divide:u4|cntp[8] ; dotmatric:u1|divide:u4|cntp[4]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.869 ns                ;
+; N/A                                     ; 152.07 MHz ( period = 6.576 ns )                    ; dotmatric:u1|divide:u4|cntp[8] ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 152.11 MHz ( period = 6.574 ns )                    ; dotmatric:u1|divide:u4|cntp[8] ; dotmatric:u1|divide:u4|clkp         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 154.58 MHz ( period = 6.469 ns )                    ; divide:u2|cntp[9]              ; divide:u2|cntp[9]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.760 ns                ;
+; N/A                                     ; 154.75 MHz ( period = 6.462 ns )                    ; dotmatric:u1|divide:u4|cntp[2] ; dotmatric:u1|divide:u4|cntp[2]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.753 ns                ;
+; N/A                                     ; 155.45 MHz ( period = 6.433 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.724 ns                ;
+; N/A                                     ; 155.52 MHz ( period = 6.430 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|dog[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.319 ns                ;
+; N/A                                     ; 158.91 MHz ( period = 6.293 ns )                    ; dotmatric:u1|divide:u4|cntp[3] ; dotmatric:u1|divide:u4|cntp[3]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.584 ns                ;
+; N/A                                     ; 159.69 MHz ( period = 6.262 ns )                    ; ani[0]                         ; dotmatric:u1|changemode:u3|mouse[7] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.151 ns                ;
+; N/A                                     ; 159.80 MHz ( period = 6.258 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|mouse[0] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 159.80 MHz ( period = 6.258 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|mouse[3] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 159.80 MHz ( period = 6.258 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|mouse[5] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 160.05 MHz ( period = 6.248 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|cat[1]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.137 ns                ;
+; N/A                                     ; 160.05 MHz ( period = 6.248 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|cat[3]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.137 ns                ;
+; N/A                                     ; 160.05 MHz ( period = 6.248 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|cat[5]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.137 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|mouse[3] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.029 ns                ;
+; N/A                                     ; 163.05 MHz ( period = 6.133 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|mouse[0] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.022 ns                ;
+; N/A                                     ; 163.48 MHz ( period = 6.117 ns )                    ; divide:u2|cntp[8]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.408 ns                ;
+; N/A                                     ; 164.39 MHz ( period = 6.083 ns )                    ; dotmatric:u1|divide:u4|cntp[8] ; dotmatric:u1|divide:u4|cntp[8]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.374 ns                ;
+; N/A                                     ; 164.96 MHz ( period = 6.062 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|mouse[7] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.951 ns                ;
+; N/A                                     ; 165.07 MHz ( period = 6.058 ns )                    ; dotmatric:u1|divide:u4|cntp[7] ; dotmatric:u1|divide:u4|cntp[7]      ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 165.51 MHz ( period = 6.042 ns )                    ; divide:u2|cntp[9]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.333 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|dog[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.892 ns                ;
+; N/A                                     ; 166.67 MHz ( period = 6.000 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|cat[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.889 ns                ;
+; N/A                                     ; 168.63 MHz ( period = 5.930 ns )                    ; dotmatric:u1|cnt8:u1|cnt[1]    ; dotmatric:u1|divide:u4|clkp         ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.221 ns                ;
+; N/A                                     ; 169.15 MHz ( period = 5.912 ns )                    ; ani[1]                         ; dotmatric:u1|changemode:u3|mouse[7] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.801 ns                ;
+; N/A                                     ; 174.83 MHz ( period = 5.720 ns )                    ; divide:u2|cntp[6]              ; divide:u2|cntp[5]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 5.011 ns                ;
+; N/A                                     ; 176.49 MHz ( period = 5.666 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|cat[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.555 ns                ;
+; N/A                                     ; 176.55 MHz ( period = 5.664 ns )                    ; move[1]                        ; dotmatric:u1|changemode:u3|dog[7]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.553 ns                ;
+; N/A                                     ; 180.70 MHz ( period = 5.534 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|mouse[7] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.423 ns                ;
+; N/A                                     ; 180.77 MHz ( period = 5.532 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|mouse[0] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.421 ns                ;
+; N/A                                     ; 180.77 MHz ( period = 5.532 ns )                    ; move[0]                        ; dotmatric:u1|changemode:u3|mouse[3] ; clk1khz    ; clk1khz  ; None                        ; None                      ; 3.421 ns                ;
+; N/A                                     ; 181.88 MHz ( period = 5.498 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[6]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.789 ns                ;
+; N/A                                     ; 182.02 MHz ( period = 5.494 ns )                    ; divide:u2|cntp[7]              ; divide:u2|cntp[3]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.785 ns                ;
+; N/A                                     ; 185.91 MHz ( period = 5.379 ns )                    ; divide:u2|cntp[8]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.670 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; mouseisr                       ; mouseisr                            ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.54 MHz ( period = 5.304 ns )                    ; divide:u2|cntp[9]              ; divide:u2|cntp[7]                   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.595 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; enmove                         ; animal.11                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.566 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; enmove                         ; animal.01                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.566 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; enmove                         ; animal.10                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.566 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; enmove                         ; animal.00                           ; clk1khz    ; clk1khz  ; None                        ; None                      ; 4.566 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                ;                                     ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk1khz'                                                                                                                                                        ;
++------------------------------------------+-----------+----------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From      ; To       ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------+----------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; movesetr  ; dogisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.089 ns                 ;
+; Not operational: Clock Skew > Data Delay ; movesetr  ; catisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.097 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.10 ; mouseisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.658 ns                 ;
+; Not operational: Clock Skew > Data Delay ; movesetr  ; move[0]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.911 ns                 ;
+; Not operational: Clock Skew > Data Delay ; movesetr  ; move[1]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.920 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; catisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.037 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; dogisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.042 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.01 ; dogisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.081 ns                 ;
+; Not operational: Clock Skew > Data Delay ; movesetr  ; mouseisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.00 ; catisr   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.124 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.11 ; ani[0]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.266 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; move[1]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.377 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; move[0]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.377 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; moveset  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.377 ns                 ;
+; Not operational: Clock Skew > Data Delay ; enmove    ; mouseisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.618 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.11 ; ani[1]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; movesetr  ; movedone ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.913 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.01 ; ani[0]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.949 ns                 ;
+; Not operational: Clock Skew > Data Delay ; animal.10 ; ani[1]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.949 ns                 ;
++------------------------------------------+-----------+----------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++------------------------------------------------------------------+
+; tsu                                                              ;
++-------+--------------+------------+-------+-----------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To        ; To Clock ;
++-------+--------------+------------+-------+-----------+----------+
+; N/A   ; None         ; 5.582 ns   ; dog   ; movesetr  ; clk1khz  ;
+; N/A   ; None         ; 5.435 ns   ; mouse ; movesetr  ; clk1khz  ;
+; N/A   ; None         ; 5.424 ns   ; cat   ; animal.11 ; clk1khz  ;
+; N/A   ; None         ; 5.424 ns   ; cat   ; animal.01 ; clk1khz  ;
+; N/A   ; None         ; 5.424 ns   ; cat   ; animal.10 ; clk1khz  ;
+; N/A   ; None         ; 5.424 ns   ; cat   ; animal.00 ; clk1khz  ;
+; N/A   ; None         ; 5.299 ns   ; dog   ; animal.11 ; clk1khz  ;
+; N/A   ; None         ; 5.299 ns   ; dog   ; animal.01 ; clk1khz  ;
+; N/A   ; None         ; 5.299 ns   ; dog   ; animal.10 ; clk1khz  ;
+; N/A   ; None         ; 5.299 ns   ; dog   ; animal.00 ; clk1khz  ;
+; N/A   ; None         ; 5.052 ns   ; mouse ; animal.11 ; clk1khz  ;
+; N/A   ; None         ; 5.052 ns   ; mouse ; animal.01 ; clk1khz  ;
+; N/A   ; None         ; 5.052 ns   ; mouse ; animal.10 ; clk1khz  ;
+; N/A   ; None         ; 5.052 ns   ; mouse ; animal.00 ; clk1khz  ;
+; N/A   ; None         ; 3.552 ns   ; cat   ; enmove    ; clk1khz  ;
+; N/A   ; None         ; 3.547 ns   ; cat   ; movesetr  ; clk1khz  ;
+; N/A   ; None         ; 3.427 ns   ; dog   ; enmove    ; clk1khz  ;
+; N/A   ; None         ; 3.180 ns   ; mouse ; enmove    ; clk1khz  ;
+; N/A   ; None         ; 2.440 ns   ; rst   ; movesetr  ; clk1khz  ;
+; N/A   ; None         ; 2.393 ns   ; off   ; movesetr  ; clk1khz  ;
+; N/A   ; None         ; 1.036 ns   ; off   ; ani[0]    ; clk1khz  ;
+; N/A   ; None         ; 1.036 ns   ; off   ; ani[1]    ; clk1khz  ;
+; N/A   ; None         ; -0.256 ns  ; rst   ; ani[0]    ; clk1khz  ;
+; N/A   ; None         ; -0.256 ns  ; rst   ; ani[1]    ; clk1khz  ;
++-------+--------------+------------+-------+-----------+----------+
+
+
++---------------------------------------------------------------------------------------------------+
+; tco                                                                                               ;
++-------+--------------+------------+-----------------------------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From                                    ; To     ; From Clock ;
++-------+--------------+------------+-----------------------------------------+--------+------------+
+; N/A   ; None         ; 14.191 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[2] ; g[3]   ; off        ;
+; N/A   ; None         ; 14.191 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[2] ; g[2]   ; off        ;
+; N/A   ; None         ; 13.539 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[2] ; r[3]   ; off        ;
+; N/A   ; None         ; 13.539 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[2] ; r[2]   ; off        ;
+; N/A   ; None         ; 13.508 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[4] ; r[5]   ; off        ;
+; N/A   ; None         ; 13.508 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[4] ; r[4]   ; off        ;
+; N/A   ; None         ; 13.403 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[0] ; r[0]   ; off        ;
+; N/A   ; None         ; 13.322 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[0] ; g[1]   ; off        ;
+; N/A   ; None         ; 13.322 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[0] ; g[0]   ; off        ;
+; N/A   ; None         ; 13.322 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[6] ; r[7]   ; off        ;
+; N/A   ; None         ; 13.322 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[6] ; r[6]   ; off        ;
+; N/A   ; None         ; 13.085 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[4] ; clk1khz    ;
+; N/A   ; None         ; 12.891 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|r[0] ; r[1]   ; off        ;
+; N/A   ; None         ; 12.717 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[2] ; clk1khz    ;
+; N/A   ; None         ; 12.585 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[5] ; clk1khz    ;
+; N/A   ; None         ; 12.558 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[0] ; clk1khz    ;
+; N/A   ; None         ; 12.504 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[1] ; clk1khz    ;
+; N/A   ; None         ; 12.502 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[3] ; clk1khz    ;
+; N/A   ; None         ; 12.236 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[4] ; g[4]   ; off        ;
+; N/A   ; None         ; 12.123 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[6] ; g[6]   ; off        ;
+; N/A   ; None         ; 12.093 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[7] ; clk1khz    ;
+; N/A   ; None         ; 11.900 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[6] ; clk1khz    ;
+; N/A   ; None         ; 11.797 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[4] ; clk1khz    ;
+; N/A   ; None         ; 11.379 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[2] ; clk1khz    ;
+; N/A   ; None         ; 11.269 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[5] ; clk1khz    ;
+; N/A   ; None         ; 11.253 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[2] ; clk1khz    ;
+; N/A   ; None         ; 11.212 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[0] ; clk1khz    ;
+; N/A   ; None         ; 11.183 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[3] ; clk1khz    ;
+; N/A   ; None         ; 11.170 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[1] ; clk1khz    ;
+; N/A   ; None         ; 11.115 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[5] ; clk1khz    ;
+; N/A   ; None         ; 11.094 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[0] ; clk1khz    ;
+; N/A   ; None         ; 11.039 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[1] ; clk1khz    ;
+; N/A   ; None         ; 11.038 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[3] ; clk1khz    ;
+; N/A   ; None         ; 11.030 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[6] ; g[7]   ; off        ;
+; N/A   ; None         ; 11.023 ns  ; dotmatric:u1|bicolor_dot_matrix:u2|g[4] ; g[5]   ; off        ;
+; N/A   ; None         ; 10.789 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[7] ; clk1khz    ;
+; N/A   ; None         ; 10.647 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[7] ; clk1khz    ;
+; N/A   ; None         ; 10.602 ns  ; dotmatric:u1|cnt8:u1|cnt[0]             ; row[6] ; clk1khz    ;
+; N/A   ; None         ; 10.452 ns  ; dotmatric:u1|cnt8:u1|cnt[2]             ; row[6] ; clk1khz    ;
+; N/A   ; None         ; 10.198 ns  ; dotmatric:u1|cnt8:u1|cnt[1]             ; row[4] ; clk1khz    ;
++-------+--------------+------------+-----------------------------------------+--------+------------+
+
+
++-------------------------------------------------------------+
+; tpd                                                         ;
++-------+-------------------+-----------------+------+--------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To     ;
++-------+-------------------+-----------------+------+--------+
+; N/A   ; None              ; 11.635 ns       ; off  ; row[4] ;
+; N/A   ; None              ; 10.503 ns       ; off  ; row[2] ;
+; N/A   ; None              ; 10.370 ns       ; off  ; row[5] ;
+; N/A   ; None              ; 10.344 ns       ; off  ; row[0] ;
+; N/A   ; None              ; 10.290 ns       ; off  ; row[1] ;
+; N/A   ; None              ; 10.288 ns       ; off  ; row[3] ;
+; N/A   ; None              ; 9.898 ns        ; off  ; row[7] ;
+; N/A   ; None              ; 9.703 ns        ; off  ; row[6] ;
++-------+-------------------+-----------------+------+--------+
+
+
++------------------------------------------------------------------------+
+; th                                                                     ;
++---------------+-------------+-----------+-------+-----------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To        ; To Clock ;
++---------------+-------------+-----------+-------+-----------+----------+
+; N/A           ; None        ; 0.810 ns  ; rst   ; ani[0]    ; clk1khz  ;
+; N/A           ; None        ; 0.810 ns  ; rst   ; ani[1]    ; clk1khz  ;
+; N/A           ; None        ; -0.482 ns ; off   ; ani[0]    ; clk1khz  ;
+; N/A           ; None        ; -0.482 ns ; off   ; ani[1]    ; clk1khz  ;
+; N/A           ; None        ; -1.262 ns ; mouse ; animal.01 ; clk1khz  ;
+; N/A           ; None        ; -1.266 ns ; mouse ; animal.00 ; clk1khz  ;
+; N/A           ; None        ; -1.434 ns ; dog   ; animal.01 ; clk1khz  ;
+; N/A           ; None        ; -1.441 ns ; dog   ; animal.00 ; clk1khz  ;
+; N/A           ; None        ; -1.476 ns ; mouse ; animal.10 ; clk1khz  ;
+; N/A           ; None        ; -1.839 ns ; off   ; movesetr  ; clk1khz  ;
+; N/A           ; None        ; -1.886 ns ; rst   ; movesetr  ; clk1khz  ;
+; N/A           ; None        ; -2.621 ns ; mouse ; movesetr  ; clk1khz  ;
+; N/A           ; None        ; -2.626 ns ; mouse ; enmove    ; clk1khz  ;
+; N/A           ; None        ; -2.780 ns ; cat   ; movesetr  ; clk1khz  ;
+; N/A           ; None        ; -2.868 ns ; dog   ; movesetr  ; clk1khz  ;
+; N/A           ; None        ; -2.873 ns ; dog   ; enmove    ; clk1khz  ;
+; N/A           ; None        ; -2.998 ns ; cat   ; enmove    ; clk1khz  ;
+; N/A           ; None        ; -4.498 ns ; mouse ; animal.11 ; clk1khz  ;
+; N/A           ; None        ; -4.745 ns ; dog   ; animal.11 ; clk1khz  ;
+; N/A           ; None        ; -4.745 ns ; dog   ; animal.10 ; clk1khz  ;
+; N/A           ; None        ; -4.870 ns ; cat   ; animal.11 ; clk1khz  ;
+; N/A           ; None        ; -4.870 ns ; cat   ; animal.01 ; clk1khz  ;
+; N/A           ; None        ; -4.870 ns ; cat   ; animal.10 ; clk1khz  ;
+; N/A           ; None        ; -4.870 ns ; cat   ; animal.00 ; clk1khz  ;
++---------------+-------------+-----------+-------+-----------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Mon Nov 21 11:54:24 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off animation -c animation
+Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|r[0]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|r[2]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|r[4]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|r[6]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|g[0]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|g[2]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|g[4]" is a latch
+    Warning: Node "dotmatric:u1|bicolor_dot_matrix:u2|g[6]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk1khz" is an undefined clock
+    Info: Assuming node "off" is a latch enable. Will not compute fmax for this pin.
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "divide:u2|clkp" as buffer
+    Info: Detected ripple clock "dotmatric:u1|divide:u4|clkp" as buffer
+Info: Clock "clk1khz" has Internal fmax of 95.66 MHz between source register "dogisr" and destination register "movesetr" (period= 10.454 ns)
+    Info: + Longest register to register delay is 4.026 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X10_Y10_N7; Fanout = 2; REG Node = 'dogisr'
+        Info: 2: + IC(0.994 ns) + CELL(0.511 ns) = 1.505 ns; Loc. = LC_X10_Y10_N2; Fanout = 1; COMB Node = 'movesetr~0'
+        Info: 3: + IC(0.743 ns) + CELL(0.200 ns) = 2.448 ns; Loc. = LC_X10_Y10_N6; Fanout = 1; COMB Node = 'movesetr~2'
+        Info: 4: + IC(0.774 ns) + CELL(0.804 ns) = 4.026 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+        Info: Total cell delay = 1.515 ns ( 37.63 % )
+        Info: Total interconnect delay = 2.511 ns ( 62.37 % )
+    Info: - Smallest clock skew is -5.719 ns
+        Info: + Shortest clock path from clock "clk1khz" to destination register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Longest clock path from clock "clk1khz" to source register is 9.538 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y6_N9; Fanout = 9; REG Node = 'divide:u2|clkp'
+            Info: 3: + IC(4.425 ns) + CELL(0.918 ns) = 9.538 ns; Loc. = LC_X10_Y10_N7; Fanout = 2; REG Node = 'dogisr'
+            Info: Total cell delay = 3.375 ns ( 35.38 % )
+            Info: Total interconnect delay = 6.163 ns ( 64.62 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Warning: Circuit may not operate. Detected 19 non-operational path(s) clocked by clock "clk1khz" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "movesetr" and destination pin or register "dogisr" for clock "clk1khz" (Hold time is 3.475 ns)
+    Info: + Largest clock skew is 5.719 ns
+        Info: + Longest clock path from clock "clk1khz" to destination register is 9.538 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y6_N9; Fanout = 9; REG Node = 'divide:u2|clkp'
+            Info: 3: + IC(4.425 ns) + CELL(0.918 ns) = 9.538 ns; Loc. = LC_X10_Y10_N7; Fanout = 2; REG Node = 'dogisr'
+            Info: Total cell delay = 3.375 ns ( 35.38 % )
+            Info: Total interconnect delay = 6.163 ns ( 64.62 % )
+        Info: - Shortest clock path from clock "clk1khz" to source register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 2.089 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+        Info: 2: + IC(0.906 ns) + CELL(1.183 ns) = 2.089 ns; Loc. = LC_X10_Y10_N7; Fanout = 2; REG Node = 'dogisr'
+        Info: Total cell delay = 1.183 ns ( 56.63 % )
+        Info: Total interconnect delay = 0.906 ns ( 43.37 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+Info: tsu for register "movesetr" (data pin = "dog", clock pin = "clk1khz") is 5.582 ns
+    Info: + Longest pin to register delay is 9.068 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_123; Fanout = 5; PIN Node = 'dog'
+        Info: 2: + IC(3.288 ns) + CELL(0.740 ns) = 5.160 ns; Loc. = LC_X13_Y10_N1; Fanout = 1; COMB Node = 'movesetr~1'
+        Info: 3: + IC(1.819 ns) + CELL(0.511 ns) = 7.490 ns; Loc. = LC_X10_Y10_N6; Fanout = 1; COMB Node = 'movesetr~2'
+        Info: 4: + IC(0.774 ns) + CELL(0.804 ns) = 9.068 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+        Info: Total cell delay = 3.187 ns ( 35.15 % )
+        Info: Total interconnect delay = 5.881 ns ( 64.85 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk1khz" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X10_Y10_N5; Fanout = 7; REG Node = 'movesetr'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "off" to destination pin "g[3]" through register "dotmatric:u1|bicolor_dot_matrix:u2|g[2]" is 14.191 ns
+    Info: + Longest clock path from clock "off" to source register is 8.092 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_127; Fanout = 20; CLK Node = 'off'
+        Info: 2: + IC(6.220 ns) + CELL(0.740 ns) = 8.092 ns; Loc. = LC_X12_Y2_N4; Fanout = 2; REG Node = 'dotmatric:u1|bicolor_dot_matrix:u2|g[2]'
+        Info: Total cell delay = 1.872 ns ( 23.13 % )
+        Info: Total interconnect delay = 6.220 ns ( 76.87 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 6.099 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y2_N4; Fanout = 2; REG Node = 'dotmatric:u1|bicolor_dot_matrix:u2|g[2]'
+        Info: 2: + IC(3.777 ns) + CELL(2.322 ns) = 6.099 ns; Loc. = PIN_41; Fanout = 0; PIN Node = 'g[3]'
+        Info: Total cell delay = 2.322 ns ( 38.07 % )
+        Info: Total interconnect delay = 3.777 ns ( 61.93 % )
+Info: Longest tpd from source pin "off" to destination pin "row[4]" is 11.635 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_127; Fanout = 20; CLK Node = 'off'
+    Info: 2: + IC(4.181 ns) + CELL(0.914 ns) = 6.227 ns; Loc. = LC_X6_Y7_N9; Fanout = 1; COMB Node = 'dotmatric:u1|bicolor_dot_matrix:u2|row[4]~4'
+    Info: 3: + IC(3.086 ns) + CELL(2.322 ns) = 11.635 ns; Loc. = PIN_5; Fanout = 0; PIN Node = 'row[4]'
+    Info: Total cell delay = 4.368 ns ( 37.54 % )
+    Info: Total interconnect delay = 7.267 ns ( 62.46 % )
+Info: th for register "ani[0]" (data pin = "rst", clock pin = "clk1khz") is 0.810 ns
+    Info: + Longest clock path from clock "clk1khz" to destination register is 9.538 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 27; CLK Node = 'clk1khz'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y6_N9; Fanout = 9; REG Node = 'divide:u2|clkp'
+        Info: 3: + IC(4.425 ns) + CELL(0.918 ns) = 9.538 ns; Loc. = LC_X9_Y7_N6; Fanout = 4; REG Node = 'ani[0]'
+        Info: Total cell delay = 3.375 ns ( 35.38 % )
+        Info: Total interconnect delay = 6.163 ns ( 64.62 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 8.949 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 16; PIN Node = 'rst'
+        Info: 2: + IC(3.689 ns) + CELL(0.511 ns) = 5.332 ns; Loc. = LC_X13_Y10_N9; Fanout = 2; COMB Node = 'ani[1]~0'
+        Info: 3: + IC(2.374 ns) + CELL(1.243 ns) = 8.949 ns; Loc. = LC_X9_Y7_N6; Fanout = 4; REG Node = 'ani[0]'
+        Info: Total cell delay = 2.886 ns ( 32.25 % )
+        Info: Total interconnect delay = 6.063 ns ( 67.75 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4360 megabytes
+    Info: Processing ended: Mon Nov 21 11:54:24 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

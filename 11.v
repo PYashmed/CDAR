@@ -1,0 +1,13 @@
+        4'b0000:begin cat<=8'b11000000; dog<=dog0; mouse<=mouse0; end
+        4'b0001:begin cat<=8'b00110000; dog<=dog0; mouse<=mouse0; end
+        4'b0010:begin cat<=8'b00001100; dog<=dog0; mouse<=mouse0; end
+        4'b0011:begin cat<=8'b00000011; dog<=dog0; mouse<=mouse0; end
+        4'b0100:begin cat<=cat0; dog<=8'b11000000; mouse<=mouse0; end
+        4'b0101:begin cat<=cat0; dog<=8'b00110000; mouse<=mouse0; end
+        4'b0110:begin cat<=cat0; dog<=8'b00001100; mouse<=mouse0; end
+        4'b0111:begin cat<=cat0; dog<=8'b00000011; mouse<=mouse0; end
+        4'b1000:begin cat<=cat0; dog<=dog0; mouse<=8'b11000000; end
+        4'b1001:begin cat<=cat0; dog<=dog0; mouse<=8'b00110000; end
+        4'b1010:begin cat<=cat0; dog<=dog0; mouse<=8'b00001100; end
+        4'b1011:begin cat<=cat0; dog<=dog0; mouse<=8'b00000011; end
+        default:begin cat<=cat0; dog<=dog0; mouse<=mouse0; end

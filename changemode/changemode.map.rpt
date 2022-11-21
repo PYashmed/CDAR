@@ -1,0 +1,334 @@
+Analysis & Synthesis report for changemode
+Sun Nov 20 13:04:53 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Nov 20 13:04:53 2022    ;
+; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name               ; changemode                               ;
+; Top-level Entity Name       ; changemode                               ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 19                                       ;
+; Total pins                  ; 29                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                                      ; changemode         ; changemode         ;
+; Family name                                                                ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+
+; changemode.v                     ; yes             ; User Verilog HDL File  ; C:/Users/PYashmed/Desktop/CDAR/changemode/changemode.v ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Total logic elements                        ; 19      ;
+;     -- Combinational with no register       ; 19      ;
+;     -- Register only                        ; 0       ;
+;     -- Combinational with a register        ; 0       ;
+;                                             ;         ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 0       ;
+;     -- 3 input functions                    ; 12      ;
+;     -- 2 input functions                    ; 7       ;
+;     -- 1 input functions                    ; 0       ;
+;     -- 0 input functions                    ; 0       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 19      ;
+;     -- arithmetic mode                      ; 0       ;
+;     -- qfbk mode                            ; 0       ;
+;     -- register cascade mode                ; 0       ;
+;     -- synchronous clear/load mode          ; 0       ;
+;     -- asynchronous clear/load mode         ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 0       ;
+; I/O pins                                    ; 29      ;
+; Maximum fan-out node                        ; Mux14~0 ;
+; Maximum fan-out                             ; 4       ;
+; Total fan-out                               ; 74      ;
+; Average fan-out                             ; 1.54    ;
++---------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |changemode                ; 19 (19)     ; 0            ; 0          ; 29   ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |changemode         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; cat[0]                                              ; Mux14               ; yes                    ;
+; cat[1]                                              ; Mux14               ; yes                    ;
+; cat[2]                                              ; Mux14               ; yes                    ;
+; cat[3]                                              ; Mux14               ; yes                    ;
+; cat[4]                                              ; Mux14               ; yes                    ;
+; cat[5]                                              ; Mux14               ; yes                    ;
+; cat[6]                                              ; Mux14               ; yes                    ;
+; cat[7]                                              ; Mux14               ; yes                    ;
+; ddog[0]                                             ; Mux9                ; yes                    ;
+; ddog[1]                                             ; Mux9                ; yes                    ;
+; ddog[2]                                             ; Mux9                ; yes                    ;
+; ddog[3]                                             ; Mux9                ; yes                    ;
+; ddog[4]                                             ; Mux9                ; yes                    ;
+; ddog[5]                                             ; Mux9                ; yes                    ;
+; ddog[6]                                             ; Mux9                ; yes                    ;
+; ddog[7]                                             ; Mux9                ; yes                    ;
+; mmouse[0]                                           ; Mux4                ; yes                    ;
+; mmouse[1]                                           ; Mux4                ; yes                    ;
+; mmouse[2]                                           ; Mux4                ; yes                    ;
+; mmouse[3]                                           ; Mux4                ; yes                    ;
+; mmouse[4]                                           ; Mux4                ; yes                    ;
+; mmouse[5]                                           ; Mux4                ; yes                    ;
+; mmouse[6]                                           ; Mux4                ; yes                    ;
+; mmouse[7]                                           ; Mux4                ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sun Nov 20 13:04:52 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off changemode -c changemode
+Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info: Found 1 design units, including 1 entities, in source file changemode.v
+    Info: Found entity 1: changemode
+Info: Elaborating entity "changemode" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(12): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(13): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(13): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(14): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(14): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(15): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(15): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(16): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(16): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(17): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(17): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(18): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(18): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(19): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(19): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(20): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(20): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(21): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(21): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(22): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(22): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(23): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(23): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(24): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(24): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(25): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(25): variable "ddog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at changemode.v(25): variable "mmouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at changemode.v(11): inferring latch(es) for variable "cat", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at changemode.v(11): inferring latch(es) for variable "ddog", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at changemode.v(11): inferring latch(es) for variable "mmouse", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mmouse[0]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[1]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[2]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[3]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[4]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[5]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[6]" at changemode.v(11)
+Info (10041): Inferred latch for "mmouse[7]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[0]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[1]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[2]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[3]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[4]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[5]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[6]" at changemode.v(11)
+Info (10041): Inferred latch for "ddog[7]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[0]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[1]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[2]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[3]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[4]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[5]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[6]" at changemode.v(11)
+Info (10041): Inferred latch for "cat[7]" at changemode.v(11)
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "cat[1]" merged with LATCH primitive "cat[0]"
+    Info: Duplicate LATCH primitive "cat[3]" merged with LATCH primitive "cat[2]"
+    Info: Duplicate LATCH primitive "cat[5]" merged with LATCH primitive "cat[4]"
+    Info: Duplicate LATCH primitive "cat[7]" merged with LATCH primitive "cat[6]"
+    Info: Duplicate LATCH primitive "ddog[1]" merged with LATCH primitive "ddog[0]"
+    Info: Duplicate LATCH primitive "ddog[3]" merged with LATCH primitive "ddog[2]"
+    Info: Duplicate LATCH primitive "ddog[5]" merged with LATCH primitive "ddog[4]"
+    Info: Duplicate LATCH primitive "ddog[7]" merged with LATCH primitive "ddog[6]"
+    Info: Duplicate LATCH primitive "mmouse[1]" merged with LATCH primitive "mmouse[0]"
+    Info: Duplicate LATCH primitive "mmouse[3]" merged with LATCH primitive "mmouse[2]"
+    Info: Duplicate LATCH primitive "mmouse[5]" merged with LATCH primitive "mmouse[4]"
+    Info: Duplicate LATCH primitive "mmouse[7]" merged with LATCH primitive "mmouse[6]"
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "cnt"
+Info: Implemented 48 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 24 output pins
+    Info: Implemented 19 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4404 megabytes
+    Info: Processing ended: Sun Nov 20 13:04:53 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

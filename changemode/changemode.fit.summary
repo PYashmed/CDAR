@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Nov 20 13:04:54 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : changemode
+Top-level Entity Name : changemode
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 19 / 1,270 ( 1 % )
+Total pins : 29 / 116 ( 25 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.582 ns
+From           : dog
+To             : movesetr
+From Clock     : --
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.191 ns
+From           : dotmatric:u1|bicolor_dot_matrix:u2|g[2]
+To             : g[2]
+From Clock     : off
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.635 ns
+From           : off
+To             : row[4]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.810 ns
+From           : rst
+To             : ani[1]
+From Clock     : --
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk1khz'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 95.66 MHz ( period = 10.454 ns )
+From           : dogisr
+To             : movesetr
+From Clock     : clk1khz
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk1khz'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : movesetr
+To             : dogisr
+From Clock     : clk1khz
+To Clock       : clk1khz
+Failed Paths   : 19
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 19
+
+--------------------------------------------------------------------------------------
+

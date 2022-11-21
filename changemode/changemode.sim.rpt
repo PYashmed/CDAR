@@ -1,0 +1,196 @@
+Simulator report for changemode
+Sun Nov 20 13:06:01 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------+
+; Simulator Summary                           ;
++-----------------------------+---------------+
+; Type                        ; Value         ;
++-----------------------------+---------------+
+; Simulation Start Time       ; 0 ps          ;
+; Simulation End Time         ; 16.0 ms       ;
+; Simulation Netlist Size     ; 48 nodes      ;
+; Simulation Coverage         ;      88.57 %  ;
+; Total Number of Transitions ; 28136118      ;
+; Simulation Breakpoints      ; 0             ;
+; Family                      ; MAX II        ;
+; Device                      ; EPM1270T144C5 ;
++-----------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      88.57 % ;
+; Total nodes checked                                 ; 48           ;
+; Total output ports checked                          ; 35           ;
+; Total output ports with complete 1/0-value coverage ; 31           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 2            ;
+; Total output ports with no 0-value coverage         ; 2            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                           ;
++-----------------------+----------------------------+------------------+
+; Node Name             ; Output Port Name           ; Output Port Type ;
++-----------------------+----------------------------+------------------+
+; |changemode|Mux11~0   ; |changemode|Mux11~0        ; combout          ;
+; |changemode|Mux11~1   ; |changemode|Mux11~1        ; combout          ;
+; |changemode|Mux11~2   ; |changemode|Mux11~2        ; combout          ;
+; |changemode|Mux13~0   ; |changemode|Mux13~0        ; combout          ;
+; |changemode|Mux9~0    ; |changemode|Mux9~0         ; combout          ;
+; |changemode|Mux4~0    ; |changemode|Mux4~0         ; combout          ;
+; |changemode|mode[0]   ; |changemode|mode[0]~corein ; combout          ;
+; |changemode|mode[1]   ; |changemode|mode[1]~corein ; combout          ;
+; |changemode|mode[2]   ; |changemode|mode[2]~corein ; combout          ;
+; |changemode|rcat[0]   ; |changemode|rcat[0]        ; padio            ;
+; |changemode|rcat[1]   ; |changemode|rcat[1]        ; padio            ;
+; |changemode|rcat[2]   ; |changemode|rcat[2]        ; padio            ;
+; |changemode|rcat[3]   ; |changemode|rcat[3]        ; padio            ;
+; |changemode|rcat[6]   ; |changemode|rcat[6]        ; padio            ;
+; |changemode|rcat[7]   ; |changemode|rcat[7]        ; padio            ;
+; |changemode|rgdog[0]  ; |changemode|rgdog[0]       ; padio            ;
+; |changemode|rgdog[1]  ; |changemode|rgdog[1]       ; padio            ;
+; |changemode|rgdog[2]  ; |changemode|rgdog[2]       ; padio            ;
+; |changemode|rgdog[3]  ; |changemode|rgdog[3]       ; padio            ;
+; |changemode|rgdog[4]  ; |changemode|rgdog[4]       ; padio            ;
+; |changemode|rgdog[5]  ; |changemode|rgdog[5]       ; padio            ;
+; |changemode|rgdog[6]  ; |changemode|rgdog[6]       ; padio            ;
+; |changemode|rgdog[7]  ; |changemode|rgdog[7]       ; padio            ;
+; |changemode|gmouse[0] ; |changemode|gmouse[0]      ; padio            ;
+; |changemode|gmouse[1] ; |changemode|gmouse[1]      ; padio            ;
+; |changemode|gmouse[2] ; |changemode|gmouse[2]      ; padio            ;
+; |changemode|gmouse[3] ; |changemode|gmouse[3]      ; padio            ;
+; |changemode|gmouse[4] ; |changemode|gmouse[4]      ; padio            ;
+; |changemode|gmouse[5] ; |changemode|gmouse[5]      ; padio            ;
+; |changemode|gmouse[6] ; |changemode|gmouse[6]      ; padio            ;
+; |changemode|gmouse[7] ; |changemode|gmouse[7]      ; padio            ;
++-----------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------+
+; Missing 1-Value Coverage                                     ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |changemode|rcat[4] ; |changemode|rcat[4] ; padio            ;
+; |changemode|rcat[5] ; |changemode|rcat[5] ; padio            ;
++---------------------+---------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------+
+; Missing 0-Value Coverage                                            ;
++---------------------+----------------------------+------------------+
+; Node Name           ; Output Port Name           ; Output Port Type ;
++---------------------+----------------------------+------------------+
+; |changemode|Mux14~0 ; |changemode|Mux14~0        ; combout          ;
+; |changemode|mode[3] ; |changemode|mode[3]~corein ; combout          ;
++---------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sun Nov 20 13:05:36 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off changemode -c changemode
+Info: Using vector source file "C:/Users/PYashmed/Desktop/CDAR/changemode/changemode.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      88.57 %
+Info: Number of transitions in simulation is 28136118
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4314 megabytes
+    Info: Processing ended: Sun Nov 20 13:06:01 2022
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:27
+
+

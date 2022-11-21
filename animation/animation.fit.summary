@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Nov 21 11:54:22 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : animation
+Top-level Entity Name : animation
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 104 / 1,270 ( 8 % )
+Total pins : 30 / 116 ( 26 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

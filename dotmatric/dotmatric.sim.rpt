@@ -1,0 +1,268 @@
+Simulator report for dotmatric
+Sun Nov 20 17:19:09 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------+
+; Simulator Summary                           ;
++-----------------------------+---------------+
+; Type                        ; Value         ;
++-----------------------------+---------------+
+; Simulation Start Time       ; 0 ps          ;
+; Simulation End Time         ; 16.0 ms       ;
+; Simulation Netlist Size     ; 92 nodes      ;
+; Simulation Coverage         ;      93.94 %  ;
+; Total Number of Transitions ; 434033        ;
+; Simulation Breakpoints      ; 0             ;
+; Family                      ; MAX II        ;
+; Device                      ; EPM1270T144C5 ;
++-----------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      93.94 % ;
+; Total nodes checked                                 ; 92           ;
+; Total output ports checked                          ; 99           ;
+; Total output ports with complete 1/0-value coverage ; 93           ;
+; Total output ports with no 1/0-value coverage       ; 4            ;
+; Total output ports with no 1-value coverage         ; 4            ;
+; Total output ports with no 0-value coverage         ; 6            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                              ;
++-------------------------------------------+-------------------------------------------+------------------+
+; Node Name                                 ; Output Port Name                          ; Output Port Type ;
++-------------------------------------------+-------------------------------------------+------------------+
+; |dotmatric|cnt8:u1|cnt[1]                 ; |dotmatric|bicolor_dot_matrix:u2|row[0]~0 ; combout          ;
+; |dotmatric|cnt8:u1|cnt[1]                 ; |dotmatric|cnt8:u1|cnt[1]                 ; regout           ;
+; |dotmatric|bicolor_dot_matrix:u2|row[1]~1 ; |dotmatric|bicolor_dot_matrix:u2|row[1]~1 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[2]~2 ; |dotmatric|bicolor_dot_matrix:u2|row[2]~2 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[3]~3 ; |dotmatric|bicolor_dot_matrix:u2|row[3]~3 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[4]~4 ; |dotmatric|bicolor_dot_matrix:u2|row[4]~4 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[5]~5 ; |dotmatric|bicolor_dot_matrix:u2|row[5]~5 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[6]~6 ; |dotmatric|bicolor_dot_matrix:u2|row[6]~6 ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|row[7]~7 ; |dotmatric|bicolor_dot_matrix:u2|row[7]~7 ; combout          ;
+; |dotmatric|divide:u4|Add0~0               ; |dotmatric|divide:u4|Add0~0               ; combout          ;
+; |dotmatric|divide:u4|Add0~0               ; |dotmatric|divide:u4|Add0~2               ; cout0            ;
+; |dotmatric|divide:u4|Add0~0               ; |dotmatric|divide:u4|Add0~2COUT1_54       ; cout1            ;
+; |dotmatric|changemode:u3|cat[1]           ; |dotmatric|bicolor_dot_matrix:u2|Mux7~0   ; combout          ;
+; |dotmatric|changemode:u3|cat[3]           ; |dotmatric|bicolor_dot_matrix:u2|Mux5~0   ; combout          ;
+; |dotmatric|changemode:u3|mouse[5]         ; |dotmatric|changemode:u3|mouse[5]         ; regout           ;
+; |dotmatric|changemode:u3|cat[5]           ; |dotmatric|changemode:u3|cat[5]           ; regout           ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux3~0   ; |dotmatric|bicolor_dot_matrix:u2|Mux3~0   ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux1~0   ; |dotmatric|bicolor_dot_matrix:u2|Mux1~0   ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux11~0  ; |dotmatric|bicolor_dot_matrix:u2|Mux11~0  ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux15~0  ; |dotmatric|bicolor_dot_matrix:u2|Mux15~0  ; combout          ;
+; |dotmatric|changemode:u3|dog[1]           ; |dotmatric|bicolor_dot_matrix:u2|Mux15~1  ; combout          ;
+; |dotmatric|changemode:u3|dog[3]           ; |dotmatric|bicolor_dot_matrix:u2|Mux13~0  ; combout          ;
+; |dotmatric|changemode:u3|dog[5]           ; |dotmatric|changemode:u3|dog[5]           ; regout           ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux11~1  ; |dotmatric|bicolor_dot_matrix:u2|Mux11~1  ; combout          ;
+; |dotmatric|bicolor_dot_matrix:u2|Mux9~0   ; |dotmatric|bicolor_dot_matrix:u2|Mux9~0   ; combout          ;
+; |dotmatric|changemode:u3|mouse[0]         ; |dotmatric|changemode:u3|Mux6~0           ; combout          ;
+; |dotmatric|divide:u4|clkp                 ; |dotmatric|divide:u4|clkp                 ; regout           ;
+; |dotmatric|changemode:u3|mouse[5]~0       ; |dotmatric|changemode:u3|mouse[5]~0       ; combout          ;
+; |dotmatric|changemode:u3|cat[5]~0         ; |dotmatric|changemode:u3|cat[5]~0         ; combout          ;
+; |dotmatric|changemode:u3|mouse[3]         ; |dotmatric|changemode:u3|Mux4~0           ; combout          ;
+; |dotmatric|changemode:u3|mouse[3]         ; |dotmatric|changemode:u3|mouse[3]         ; regout           ;
+; |dotmatric|changemode:u3|Mux2~0           ; |dotmatric|changemode:u3|Mux2~0           ; combout          ;
+; |dotmatric|changemode:u3|dog[7]~0         ; |dotmatric|changemode:u3|dog[7]~0         ; combout          ;
+; |dotmatric|changemode:u3|dog[7]~1         ; |dotmatric|changemode:u3|dog[7]~1         ; combout          ;
+; |dotmatric|divide:u4|cntp[2]              ; |dotmatric|divide:u4|cntp[2]              ; regout           ;
+; |dotmatric|divide:u4|cntp[3]              ; |dotmatric|divide:u4|LessThan0~0          ; combout          ;
+; |dotmatric|divide:u4|cntp[3]              ; |dotmatric|divide:u4|cntp[3]              ; regout           ;
+; |dotmatric|divide:u4|cntp[7]              ; |dotmatric|divide:u4|cntp[7]              ; regout           ;
+; |dotmatric|divide:u4|cntp[6]              ; |dotmatric|divide:u4|cntp[6]              ; regout           ;
+; |dotmatric|divide:u4|cntp[5]              ; |dotmatric|divide:u4|cntp[5]              ; regout           ;
+; |dotmatric|divide:u4|cntp[4]              ; |dotmatric|divide:u4|cntp[4]              ; regout           ;
+; |dotmatric|divide:u4|Equal0~0             ; |dotmatric|divide:u4|Equal0~0             ; combout          ;
+; |dotmatric|divide:u4|cntp[8]              ; |dotmatric|divide:u4|cntp[8]              ; regout           ;
+; |dotmatric|divide:u4|Add0~5               ; |dotmatric|divide:u4|Add0~5               ; combout          ;
+; |dotmatric|divide:u4|Add0~5               ; |dotmatric|divide:u4|Add0~7               ; cout0            ;
+; |dotmatric|divide:u4|Add0~5               ; |dotmatric|divide:u4|Add0~7COUT1_56       ; cout1            ;
+; |dotmatric|divide:u4|cntp[9]              ; |dotmatric|divide:u4|Equal0~1             ; combout          ;
+; |dotmatric|divide:u4|Equal0~2             ; |dotmatric|divide:u4|Equal0~2             ; combout          ;
+; |dotmatric|divide:u4|Add0~10              ; |dotmatric|divide:u4|Add0~10              ; combout          ;
+; |dotmatric|divide:u4|Add0~10              ; |dotmatric|divide:u4|Add0~12              ; cout0            ;
+; |dotmatric|divide:u4|Add0~10              ; |dotmatric|divide:u4|Add0~12COUT1_58      ; cout1            ;
+; |dotmatric|divide:u4|Add0~15              ; |dotmatric|divide:u4|Add0~15              ; combout          ;
+; |dotmatric|divide:u4|Add0~15              ; |dotmatric|divide:u4|Add0~17COUT1_64      ; cout1            ;
+; |dotmatric|divide:u4|Add0~20              ; |dotmatric|divide:u4|Add0~20              ; combout          ;
+; |dotmatric|divide:u4|Add0~20              ; |dotmatric|divide:u4|Add0~22COUT1_62      ; cout1            ;
+; |dotmatric|divide:u4|Add0~25              ; |dotmatric|divide:u4|Add0~25              ; combout          ;
+; |dotmatric|divide:u4|Add0~25              ; |dotmatric|divide:u4|Add0~27              ; cout             ;
+; |dotmatric|divide:u4|Add0~30              ; |dotmatric|divide:u4|Add0~30              ; combout          ;
+; |dotmatric|divide:u4|Add0~30              ; |dotmatric|divide:u4|Add0~32              ; cout0            ;
+; |dotmatric|divide:u4|Add0~30              ; |dotmatric|divide:u4|Add0~32COUT1_60      ; cout1            ;
+; |dotmatric|divide:u4|Add0~35              ; |dotmatric|divide:u4|Add0~35              ; combout          ;
+; |dotmatric|divide:u4|Add0~40              ; |dotmatric|divide:u4|Add0~40              ; combout          ;
+; |dotmatric|divide:u4|Add0~40              ; |dotmatric|divide:u4|Add0~42COUT1_66      ; cout1            ;
+; |dotmatric|off                            ; |dotmatric|off~corein                     ; combout          ;
+; |dotmatric|clk1khz                        ; |dotmatric|clk1khz~corein                 ; combout          ;
+; |dotmatric|mode[0]                        ; |dotmatric|mode[0]~corein                 ; combout          ;
+; |dotmatric|mode[1]                        ; |dotmatric|mode[1]~corein                 ; combout          ;
+; |dotmatric|rst                            ; |dotmatric|rst~corein                     ; combout          ;
+; |dotmatric|mode[2]                        ; |dotmatric|mode[2]~corein                 ; combout          ;
+; |dotmatric|row[0]                         ; |dotmatric|row[0]                         ; padio            ;
+; |dotmatric|row[1]                         ; |dotmatric|row[1]                         ; padio            ;
+; |dotmatric|row[2]                         ; |dotmatric|row[2]                         ; padio            ;
+; |dotmatric|row[3]                         ; |dotmatric|row[3]                         ; padio            ;
+; |dotmatric|row[4]                         ; |dotmatric|row[4]                         ; padio            ;
+; |dotmatric|row[5]                         ; |dotmatric|row[5]                         ; padio            ;
+; |dotmatric|row[6]                         ; |dotmatric|row[6]                         ; padio            ;
+; |dotmatric|row[7]                         ; |dotmatric|row[7]                         ; padio            ;
+; |dotmatric|colr[0]                        ; |dotmatric|colr[0]                        ; padio            ;
+; |dotmatric|colr[1]                        ; |dotmatric|colr[1]                        ; padio            ;
+; |dotmatric|colr[2]                        ; |dotmatric|colr[2]                        ; padio            ;
+; |dotmatric|colr[3]                        ; |dotmatric|colr[3]                        ; padio            ;
+; |dotmatric|colr[4]                        ; |dotmatric|colr[4]                        ; padio            ;
+; |dotmatric|colr[5]                        ; |dotmatric|colr[5]                        ; padio            ;
+; |dotmatric|colr[6]                        ; |dotmatric|colr[6]                        ; padio            ;
+; |dotmatric|colr[7]                        ; |dotmatric|colr[7]                        ; padio            ;
+; |dotmatric|colg[0]                        ; |dotmatric|colg[0]                        ; padio            ;
+; |dotmatric|colg[1]                        ; |dotmatric|colg[1]                        ; padio            ;
+; |dotmatric|colg[2]                        ; |dotmatric|colg[2]                        ; padio            ;
+; |dotmatric|colg[3]                        ; |dotmatric|colg[3]                        ; padio            ;
+; |dotmatric|colg[4]                        ; |dotmatric|colg[4]                        ; padio            ;
+; |dotmatric|colg[5]                        ; |dotmatric|colg[5]                        ; padio            ;
+; |dotmatric|colg[6]                        ; |dotmatric|colg[6]                        ; padio            ;
+; |dotmatric|colg[7]                        ; |dotmatric|colg[7]                        ; padio            ;
++-------------------------------------------+-------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                       ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |dotmatric|divide:u4|cntp[9] ; |dotmatric|divide:u4|cntp[9] ; regout           ;
+; |dotmatric|divide:u4|Add0~15 ; |dotmatric|divide:u4|Add0~17 ; cout0            ;
+; |dotmatric|divide:u4|Add0~20 ; |dotmatric|divide:u4|Add0~22 ; cout0            ;
+; |dotmatric|divide:u4|Add0~40 ; |dotmatric|divide:u4|Add0~42 ; cout0            ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                 ;
++-----------------------------------+-----------------------------------+------------------+
+; Node Name                         ; Output Port Name                  ; Output Port Type ;
++-----------------------------------+-----------------------------------+------------------+
+; |dotmatric|changemode:u3|mouse[0] ; |dotmatric|changemode:u3|mouse[0] ; regout           ;
+; |dotmatric|divide:u4|cntp[9]      ; |dotmatric|divide:u4|cntp[9]      ; regout           ;
+; |dotmatric|divide:u4|Add0~15      ; |dotmatric|divide:u4|Add0~17      ; cout0            ;
+; |dotmatric|divide:u4|Add0~20      ; |dotmatric|divide:u4|Add0~22      ; cout0            ;
+; |dotmatric|divide:u4|Add0~40      ; |dotmatric|divide:u4|Add0~42      ; cout0            ;
+; |dotmatric|mode[3]                ; |dotmatric|mode[3]~corein         ; combout          ;
++-----------------------------------+-----------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sun Nov 20 17:19:07 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off dotmatric -c dotmatric
+Info: Using vector source file "C:/Users/PYashmed/Desktop/CDAR/dotmatric/dotmatric.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |dotmatric|changemode:u3|cat[7]
+    Info: Register: |dotmatric|changemode:u3|mouse[7]
+    Info: Register: |dotmatric|changemode:u3|dog[7]
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      93.94 %
+Info: Number of transitions in simulation is 434033
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4317 megabytes
+    Info: Processing ended: Sun Nov 20 17:19:09 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

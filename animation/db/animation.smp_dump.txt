@@ -1,0 +1,7 @@
+
+State Machine - |animation|animal
+Name animal.00 animal.10 animal.01 animal.11 
+animal.11 0 0 0 0 
+animal.01 0 0 1 1 
+animal.10 0 1 0 1 
+animal.00 1 0 0 1 
