@@ -20,14 +20,14 @@ Altera or its authorized distributors.  Please refer to the
 applicable agreement for further details.
 */
 
-VECTOR("C:/Users/PYashmed/Desktop/CDAR/animation/db/animation.sim.cvwf")
+VECTOR("C:/Users/PYashmed/Desktop/CDAR/animation/animation.vwf")
 {
 	ZOOM{
-		ZBEGIN = 4276347546;
-		ZEND = 4747723418;
-		NUMERATOR = 1145;
-		DENOMINATOR = 471375872;
-		TOP_INDEX = 7;
+		ZBEGIN = 0;
+		ZEND = 16000000000;
+		NUMERATOR = 1367;
+		DENOMINATOR = 16000000000;
+		TOP_INDEX = 3;
 	}
 	CLOCK{
 		PERIOD = 10000;
@@ -351,14 +351,14 @@ VECTOR("C:/Users/PYashmed/Desktop/CDAR/animation/db/animation.sim.cvwf")
 	}
 }
 
-VECTOR("C:/Users/PYashmed/Desktop/CDAR/animation/animation.vwf")
+VECTOR("C:/Users/PYashmed/Desktop/CDAR/animation/db/animation.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 7978125000;
-		ZEND = 8040625000;
-		NUMERATOR = 1367;
-		DENOMINATOR = 62500000;
-		TOP_INDEX = 3;
+		ZBEGIN = 0;
+		ZEND = 8000000000;
+		NUMERATOR = 1145;
+		DENOMINATOR = 8000000000;
+		TOP_INDEX = 0;
 	}
 	CLOCK{
 		PERIOD = 10000;

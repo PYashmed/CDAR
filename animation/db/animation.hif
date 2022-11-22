@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -67,7 +67,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -103,7 +103,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -139,7 +139,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -175,7 +175,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -211,7 +211,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -246,7 +246,7 @@ dotmatric:u1|divide:u4
 
 # end
 # entity
-divide
+divide1
 # storage
 db|animation.(6).cnf
 db|animation.(6).cnf
@@ -257,7 +257,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-7c829ff5c8f3f5d45d9033e5a394484
+3df05188f4985d3a0e5e395c79f6e0
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -286,7 +286,7 @@ PARAMETER_SIGNED_DEC
 USR
 }
 # hierarchies {
-divide:u2
+divide1:u2
 }
 # macro_sequence
 

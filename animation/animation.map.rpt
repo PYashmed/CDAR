@@ -1,5 +1,5 @@
 Analysis & Synthesis report for animation
-Mon Nov 21 11:54:21 2022
+Tue Nov 22 10:13:28 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -20,8 +20,9 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Parameter Settings for User Entity Instance: dotmatric:u1|divide:u4
- 15. Parameter Settings for User Entity Instance: divide:u2
- 16. Analysis & Synthesis Messages
+ 15. Parameter Settings for User Entity Instance: divide1:u2
+ 16. Port Connectivity Checks: "dotmatric:u1|divide:u4"
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,12 +48,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Nov 21 11:54:21 2022    ;
+; Analysis & Synthesis Status ; Successful - Tue Nov 22 10:13:28 2022    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; animation                                ;
 ; Top-level Entity Name       ; animation                                ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 117                                      ;
+; Total logic elements        ; 120                                      ;
 ; Total pins                  ; 30                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
@@ -157,33 +158,33 @@ applicable agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Total logic elements                        ; 117     ;
-;     -- Combinational with no register       ; 69      ;
-;     -- Register only                        ; 18      ;
+; Total logic elements                        ; 120     ;
+;     -- Combinational with no register       ; 70      ;
+;     -- Register only                        ; 20      ;
 ;     -- Combinational with a register        ; 30      ;
 ;                                             ;         ;
 ; Logic element usage by number of LUT inputs ;         ;
 ;     -- 4 input functions                    ; 40      ;
 ;     -- 3 input functions                    ; 16      ;
 ;     -- 2 input functions                    ; 37      ;
-;     -- 1 input functions                    ; 5       ;
+;     -- 1 input functions                    ; 6       ;
 ;     -- 0 input functions                    ; 1       ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 101     ;
-;     -- arithmetic mode                      ; 16      ;
+;     -- normal mode                          ; 103     ;
+;     -- arithmetic mode                      ; 17      ;
 ;     -- qfbk mode                            ; 0       ;
 ;     -- register cascade mode                ; 0       ;
 ;     -- synchronous clear/load mode          ; 0       ;
-;     -- asynchronous clear/load mode         ; 24      ;
+;     -- asynchronous clear/load mode         ; 35      ;
 ;                                             ;         ;
-; Total registers                             ; 48      ;
-; Total logic cells in carry chains           ; 18      ;
+; Total registers                             ; 50      ;
+; Total logic cells in carry chains           ; 19      ;
 ; I/O pins                                    ; 30      ;
 ; Maximum fan-out node                        ; clk1khz ;
-; Maximum fan-out                             ; 27      ;
-; Total fan-out                               ; 420     ;
-; Average fan-out                             ; 2.86    ;
+; Maximum fan-out                             ; 29      ;
+; Total fan-out                               ; 436     ;
+; Average fan-out                             ; 2.91    ;
 +---------------------------------------------+---------+
 
 
@@ -192,8 +193,8 @@ applicable agreement for further details.
 +-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                           ; Library Name ;
 +-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------+--------------+
-; |animation                    ; 117 (26)    ; 48           ; 0          ; 30   ; 0            ; 69 (11)      ; 18 (3)            ; 30 (12)          ; 18 (0)          ; 0 (0)      ; |animation                                    ; work         ;
-;    |divide:u2|                ; 22 (22)     ; 9            ; 0          ; 0    ; 0            ; 13 (13)      ; 2 (2)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |animation|divide:u2                          ; work         ;
+; |animation                    ; 120 (26)    ; 50           ; 0          ; 30   ; 0            ; 70 (11)      ; 20 (3)            ; 30 (12)          ; 19 (0)          ; 0 (0)      ; |animation                                    ; work         ;
+;    |divide1:u2|               ; 25 (25)     ; 11           ; 0          ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 7 (7)            ; 10 (10)         ; 0 (0)      ; |animation|divide1:u2                         ; work         ;
 ;    |dotmatric:u1|             ; 69 (0)      ; 24           ; 0          ; 0    ; 0            ; 45 (0)       ; 13 (0)            ; 11 (0)           ; 9 (0)           ; 0 (0)      ; |animation|dotmatric:u1                       ; work         ;
 ;       |bicolor_dot_matrix:u2| ; 26 (26)     ; 0            ; 0          ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |animation|dotmatric:u1|bicolor_dot_matrix:u2 ; work         ;
 ;       |changemode:u3|         ; 18 (18)     ; 12           ; 0          ; 0    ; 0            ; 6 (6)        ; 6 (6)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |animation|dotmatric:u1|changemode:u3         ; work         ;
@@ -262,10 +263,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; animal~8                               ; Lost fanout                                     ;
 ; animal~9                               ; Lost fanout                                     ;
 ; dotmatric:u1|divide:u4|cntp[0]         ; Merged with dotmatric:u1|cnt8:u1|cnt[0]         ;
-; divide:u2|cntp[0]                      ; Merged with dotmatric:u1|cnt8:u1|cnt[0]         ;
-; divide:u2|cntp[1]                      ; Merged with dotmatric:u1|cnt8:u1|cnt[1]         ;
 ; dotmatric:u1|divide:u4|cntp[1]         ; Merged with dotmatric:u1|cnt8:u1|cnt[1]         ;
-; Total Number of Removed Registers = 18 ;                                                 ;
+; Total Number of Removed Registers = 16 ;                                                 ;
 +----------------------------------------+-------------------------------------------------+
 
 
@@ -274,10 +273,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 48    ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Clear ; 35    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 19    ;
 ; Number of registers using Preset             ; 0     ;
@@ -292,7 +291,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; dotmatric:u1|changemode:u3|cat[7]      ; 2       ;
 ; dotmatric:u1|changemode:u3|mouse[7]    ; 3       ;
 ; dotmatric:u1|changemode:u3|dog[7]      ; 2       ;
-; Total number of inverted registers = 3 ;         ;
+; divide1:u2|cntp[9]                     ; 3       ;
+; divide1:u2|cntp[3]                     ; 3       ;
+; divide1:u2|cntp[8]                     ; 2       ;
+; divide1:u2|cntp[7]                     ; 2       ;
+; divide1:u2|cntp[6]                     ; 2       ;
+; divide1:u2|cntp[5]                     ; 2       ;
+; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
@@ -302,9 +307,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |animation|move[1]                                  ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|cat[1]        ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|dog[3]        ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|mouse[0]      ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|cat[5]        ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|dog[1]        ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |animation|dotmatric:u1|changemode:u3|mouse[5]      ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|Mux7  ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|Mux15 ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |animation|animal                                   ;
@@ -322,15 +327,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: divide:u2 ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; wide           ; 10    ; Signed Integer                ;
-; n              ; 1000  ; Signed Integer                ;
-+----------------+-------+-------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divide1:u2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; wide           ; 10    ; Signed Integer                 ;
+; n              ; 1000  ; Signed Integer                 ;
++----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dotmatric:u1|divide:u4"                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -339,57 +353,62 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Nov 21 11:54:20 2022
+    Info: Processing started: Tue Nov 22 10:13:27 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off animation -c animation
 Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
 Warning: Entity "divide" obtained from "C:/Users/PYashmed/Desktop/CDAR/animation/animation.v" instead of from Quartus II megafunction library
-Info: Found 6 design units, including 6 entities, in source file animation.v
+Info: Found 7 design units, including 7 entities, in source file animation.v
     Info: Found entity 1: animation
     Info: Found entity 2: dotmatric
     Info: Found entity 3: cnt8
     Info: Found entity 4: bicolor_dot_matrix
     Info: Found entity 5: changemode
     Info: Found entity 6: divide
-Warning (10236): Verilog HDL Implicit Net warning at animation.v(202): created implicit net for "clk1hz"
+    Info: Found entity 7: divide1
+Warning (10236): Verilog HDL Implicit Net warning at animation.v(205): created implicit net for "clk1hz"
 Info: Elaborating entity "animation" for the top level hierarchy
-Info (10264): Verilog HDL Case Statement information at animation.v(91): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at animation.v(111): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at animation.v(126): all case item expressions in this case statement are onehot
+Warning (10036): Verilog HDL or VHDL warning at animation.v(39): object "a" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at animation.v(94): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at animation.v(114): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at animation.v(129): all case item expressions in this case statement are onehot
 Info: Elaborating entity "dotmatric" for hierarchy "dotmatric:u1"
 Info: Elaborating entity "cnt8" for hierarchy "dotmatric:u1|cnt8:u1"
 Info: Elaborating entity "bicolor_dot_matrix" for hierarchy "dotmatric:u1|bicolor_dot_matrix:u2"
-Warning (10235): Verilog HDL Always Construct warning at animation.v(233): variable "off" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(238): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(239): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(241): variable "dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(242): variable "dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(244): variable "mouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(245): variable "mouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at animation.v(232): inferring latch(es) for variable "r", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(232): inferring latch(es) for variable "g", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "g[0]" at animation.v(232)
-Info (10041): Inferred latch for "g[1]" at animation.v(232)
-Info (10041): Inferred latch for "g[2]" at animation.v(232)
-Info (10041): Inferred latch for "g[3]" at animation.v(232)
-Info (10041): Inferred latch for "g[4]" at animation.v(232)
-Info (10041): Inferred latch for "g[5]" at animation.v(232)
-Info (10041): Inferred latch for "g[6]" at animation.v(232)
-Info (10041): Inferred latch for "g[7]" at animation.v(232)
-Info (10041): Inferred latch for "r[0]" at animation.v(232)
-Info (10041): Inferred latch for "r[1]" at animation.v(232)
-Info (10041): Inferred latch for "r[2]" at animation.v(232)
-Info (10041): Inferred latch for "r[3]" at animation.v(232)
-Info (10041): Inferred latch for "r[4]" at animation.v(232)
-Info (10041): Inferred latch for "r[5]" at animation.v(232)
-Info (10041): Inferred latch for "r[6]" at animation.v(232)
-Info (10041): Inferred latch for "r[7]" at animation.v(232)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(236): variable "off" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(241): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(242): variable "cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(244): variable "dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(245): variable "dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(247): variable "mouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(248): variable "mouse" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(235): inferring latch(es) for variable "r", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(235): inferring latch(es) for variable "g", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "g[0]" at animation.v(235)
+Info (10041): Inferred latch for "g[1]" at animation.v(235)
+Info (10041): Inferred latch for "g[2]" at animation.v(235)
+Info (10041): Inferred latch for "g[3]" at animation.v(235)
+Info (10041): Inferred latch for "g[4]" at animation.v(235)
+Info (10041): Inferred latch for "g[5]" at animation.v(235)
+Info (10041): Inferred latch for "g[6]" at animation.v(235)
+Info (10041): Inferred latch for "g[7]" at animation.v(235)
+Info (10041): Inferred latch for "r[0]" at animation.v(235)
+Info (10041): Inferred latch for "r[1]" at animation.v(235)
+Info (10041): Inferred latch for "r[2]" at animation.v(235)
+Info (10041): Inferred latch for "r[3]" at animation.v(235)
+Info (10041): Inferred latch for "r[4]" at animation.v(235)
+Info (10041): Inferred latch for "r[5]" at animation.v(235)
+Info (10041): Inferred latch for "r[6]" at animation.v(235)
+Info (10041): Inferred latch for "r[7]" at animation.v(235)
 Info: Elaborating entity "changemode" for hierarchy "dotmatric:u1|changemode:u3"
 Info: Elaborating entity "divide" for hierarchy "dotmatric:u1|divide:u4"
-Warning (10230): Verilog HDL assignment warning at animation.v(303): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(320): truncated value with size 32 to match size of target (10)
-Info: Elaborating entity "divide" for hierarchy "divide:u2"
-Warning (10230): Verilog HDL assignment warning at animation.v(303): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(320): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(312): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(335): truncated value with size 32 to match size of target (10)
+Info: Elaborating entity "divide1" for hierarchy "divide1:u2"
+Warning (10230): Verilog HDL assignment warning at animation.v(367): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(371): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(390): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(394): truncated value with size 32 to match size of target (10)
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info: Duplicate LATCH primitives merged into single LATCH primitive
     Info: Duplicate LATCH primitive "dotmatric:u1|bicolor_dot_matrix:u2|r[1]" merged with LATCH primitive "dotmatric:u1|bicolor_dot_matrix:u2|r[0]"
     Info: Duplicate LATCH primitive "dotmatric:u1|bicolor_dot_matrix:u2|r[3]" merged with LATCH primitive "dotmatric:u1|bicolor_dot_matrix:u2|r[2]"
@@ -403,13 +422,13 @@ Info: Registers with preset signals will power-up high
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "animal~8" lost all its fanouts during netlist optimizations.
     Info: Register "animal~9" lost all its fanouts during netlist optimizations.
-Info: Implemented 147 device resources after synthesis - the final resource count might be different
+Info: Implemented 150 device resources after synthesis - the final resource count might be different
     Info: Implemented 6 input pins
     Info: Implemented 24 output pins
-    Info: Implemented 117 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Implemented 120 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
     Info: Peak virtual memory: 4412 megabytes
-    Info: Processing ended: Mon Nov 21 11:54:21 2022
+    Info: Processing ended: Tue Nov 22 10:13:28 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

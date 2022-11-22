@@ -1,16 +1,19 @@
 |animation
+cat => comb.IN0
 cat => animal.OUTPUTSELECT
 cat => animal.OUTPUTSELECT
 cat => animal.OUTPUTSELECT
 cat => animal.OUTPUTSELECT
 cat => movesetr.OUTPUTSELECT
 cat => enmove.OUTPUTSELECT
+dog => comb.IN1
 dog => animal.OUTPUTSELECT
 dog => animal.OUTPUTSELECT
 dog => animal.OUTPUTSELECT
 dog => animal.OUTPUTSELECT
 dog => movesetr.OUTPUTSELECT
 dog => enmove.OUTPUTSELECT
+mouse => comb.IN1
 mouse => animal.OUTPUTSELECT
 mouse => animal.OUTPUTSELECT
 mouse => animal.OUTPUTSELECT
@@ -414,10 +417,21 @@ clk => cntp[6].CLK
 clk => cntp[7].CLK
 clk => cntp[8].CLK
 clk => cntp[9].CLK
+rst => clkp.ACLR
+rst => cntp[0].ACLR
+rst => cntp[1].ACLR
+rst => cntp[2].ACLR
+rst => cntp[3].ACLR
+rst => cntp[4].ACLR
+rst => cntp[5].ACLR
+rst => cntp[6].ACLR
+rst => cntp[7].ACLR
+rst => cntp[8].ACLR
+rst => cntp[9].ACLR
 clkout <= clkp.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|animation|divide:u2
+|animation|divide1:u2
 clk => clkp.CLK
 clk => cntp[0].CLK
 clk => cntp[1].CLK
@@ -429,6 +443,17 @@ clk => cntp[6].CLK
 clk => cntp[7].CLK
 clk => cntp[8].CLK
 clk => cntp[9].CLK
+rst => clkp.ACLR
+rst => cntp[0].ACLR
+rst => cntp[1].ACLR
+rst => cntp[2].ACLR
+rst => cntp[3].PRESET
+rst => cntp[4].ACLR
+rst => cntp[5].PRESET
+rst => cntp[6].PRESET
+rst => cntp[7].PRESET
+rst => cntp[8].PRESET
+rst => cntp[9].PRESET
 clkout <= clkp.DB_MAX_OUTPUT_PORT_TYPE
 
 

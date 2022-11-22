@@ -1,5 +1,5 @@
 Simulator report for animation
-Mon Nov 21 11:56:19 2022
+Tue Nov 22 10:13:36 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+---------------+
 ; Simulation Start Time       ; 0 ps          ;
 ; Simulation End Time         ; 16.0 ms       ;
-; Simulation Netlist Size     ; 134 nodes     ;
-; Simulation Coverage         ;      76.13 %  ;
-; Total Number of Transitions ; 622136        ;
+; Simulation Netlist Size     ; 137 nodes     ;
+; Simulation Coverage         ;      76.25 %  ;
+; Total Number of Transitions ; 713019        ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      76.13 % ;
-; Total nodes checked                                 ; 134          ;
-; Total output ports checked                          ; 155          ;
-; Total output ports with complete 1/0-value coverage ; 118          ;
-; Total output ports with no 1/0-value coverage       ; 32           ;
-; Total output ports with no 1-value coverage         ; 34           ;
-; Total output ports with no 0-value coverage         ; 35           ;
+; Total coverage as a percentage                      ;      76.25 % ;
+; Total nodes checked                                 ; 137          ;
+; Total output ports checked                          ; 160          ;
+; Total output ports with complete 1/0-value coverage ; 122          ;
+; Total output ports with no 1/0-value coverage       ; 33           ;
+; Total output ports with no 1-value coverage         ; 35           ;
+; Total output ports with no 0-value coverage         ; 36           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -110,13 +110,12 @@ The following table displays output ports that toggle between 1 and 0 during sim
 +--------------------------------------------------------+--------------------------------------------------------+------------------+
 ; Node Name                                              ; Output Port Name                                       ; Output Port Type ;
 +--------------------------------------------------------+--------------------------------------------------------+------------------+
-; |animation|dotmatric:u1|cnt8:u1|cnt[0]                 ; |animation|dotmatric:u1|cnt8:u1|cnt[0]                 ; regout           ;
-; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[0]~0 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[0]~0 ; combout          ;
+; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[0]~0 ; combout          ;
+; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; regout           ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[1]~1 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[1]~1 ; combout          ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[2]~2 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[2]~2 ; combout          ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[3]~3 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[3]~3 ; combout          ;
-; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[4]~4 ; combout          ;
-; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; |animation|dotmatric:u1|cnt8:u1|cnt[1]                 ; regout           ;
+; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[4]~4 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[4]~4 ; combout          ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[5]~5 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[5]~5 ; combout          ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[6]~6 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[6]~6 ; combout          ;
 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[7]~7 ; |animation|dotmatric:u1|bicolor_dot_matrix:u2|row[7]~7 ; combout          ;
@@ -142,7 +141,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |animation|dotmatric:u1|changemode:u3|mouse[3]         ; |animation|dotmatric:u1|changemode:u3|Mux4~0           ; combout          ;
 ; |animation|dotmatric:u1|changemode:u3|Mux2~0           ; |animation|dotmatric:u1|changemode:u3|Mux2~0           ; combout          ;
 ; |animation|moveset                                     ; |animation|moveset                                     ; regout           ;
-; |animation|divide:u2|clkp                              ; |animation|divide:u2|clkp                              ; regout           ;
+; |animation|divide1:u2|clkp                             ; |animation|divide1:u2|clkp                             ; regout           ;
 ; |animation|enmove                                      ; |animation|enmove                                      ; regout           ;
 ; |animation|dotmatric:u1|divide:u4|cntp[2]              ; |animation|dotmatric:u1|divide:u4|cntp[2]              ; regout           ;
 ; |animation|dotmatric:u1|divide:u4|cntp[3]              ; |animation|dotmatric:u1|divide:u4|LessThan0~0          ; combout          ;
@@ -154,15 +153,15 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |animation|movesetr~3                                  ; |animation|movesetr~3                                  ; combout          ;
 ; |animation|animal~14                                   ; |animation|animal~14                                   ; combout          ;
 ; |animation|moveset~0                                   ; |animation|moveset~0                                   ; combout          ;
-; |animation|divide:u2|cntp[3]                           ; |animation|divide:u2|cntp[3]                           ; regout           ;
-; |animation|divide:u2|cntp[2]                           ; |animation|divide:u2|LessThan0~0                       ; combout          ;
-; |animation|divide:u2|cntp[2]                           ; |animation|divide:u2|cntp[2]                           ; regout           ;
-; |animation|divide:u2|cntp[8]                           ; |animation|divide:u2|cntp[8]                           ; regout           ;
-; |animation|divide:u2|cntp[7]                           ; |animation|divide:u2|cntp[7]                           ; regout           ;
-; |animation|divide:u2|cntp[6]                           ; |animation|divide:u2|cntp[6]                           ; regout           ;
-; |animation|divide:u2|cntp[5]                           ; |animation|divide:u2|cntp[5]                           ; regout           ;
-; |animation|divide:u2|Equal0~0                          ; |animation|divide:u2|Equal0~0                          ; combout          ;
-; |animation|divide:u2|cntp[9]                           ; |animation|divide:u2|cntp[9]                           ; regout           ;
+; |animation|divide1:u2|cntp[9]                          ; |animation|divide1:u2|cntp[9]                          ; regout           ;
+; |animation|divide1:u2|cntp[3]                          ; |animation|divide1:u2|cntp[3]                          ; regout           ;
+; |animation|divide1:u2|LessThan0~0                      ; |animation|divide1:u2|LessThan0~0                      ; combout          ;
+; |animation|divide1:u2|cntp[8]                          ; |animation|divide1:u2|cntp[8]                          ; regout           ;
+; |animation|divide1:u2|cntp[7]                          ; |animation|divide1:u2|cntp[7]                          ; regout           ;
+; |animation|divide1:u2|cntp[6]                          ; |animation|divide1:u2|cntp[6]                          ; regout           ;
+; |animation|divide1:u2|cntp[5]                          ; |animation|divide1:u2|cntp[5]                          ; regout           ;
+; |animation|divide1:u2|Equal0~0                         ; |animation|divide1:u2|Equal0~0                         ; combout          ;
+; |animation|divide1:u2|cntp[4]                          ; |animation|divide1:u2|cntp[4]                          ; regout           ;
 ; |animation|dotmatric:u1|divide:u4|Add0~25              ; |animation|dotmatric:u1|divide:u4|Add0~25              ; combout          ;
 ; |animation|dotmatric:u1|divide:u4|Add0~25              ; |animation|dotmatric:u1|divide:u4|Add0~27              ; cout0            ;
 ; |animation|dotmatric:u1|divide:u4|Add0~25              ; |animation|dotmatric:u1|divide:u4|Add0~27COUT1_56      ; cout1            ;
@@ -179,29 +178,34 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |animation|movedone                                    ; |animation|movedone                                    ; regout           ;
 ; |animation|mouseisr~0                                  ; |animation|mouseisr~0                                  ; combout          ;
 ; |animation|ani[1]~1                                    ; |animation|ani[1]~1                                    ; combout          ;
-; |animation|divide:u2|Add0~0                            ; |animation|divide:u2|Add0~0                            ; combout          ;
-; |animation|divide:u2|Add0~0                            ; |animation|divide:u2|Add0~2                            ; cout0            ;
-; |animation|divide:u2|Add0~0                            ; |animation|divide:u2|Add0~2COUT1_58                    ; cout1            ;
-; |animation|divide:u2|cntp[4]                           ; |animation|divide:u2|Equal0~1                          ; combout          ;
-; |animation|divide:u2|cntp[4]                           ; |animation|divide:u2|cntp[4]                           ; regout           ;
-; |animation|divide:u2|Equal0~2                          ; |animation|divide:u2|Equal0~2                          ; combout          ;
-; |animation|divide:u2|Add0~5                            ; |animation|divide:u2|Add0~5                            ; combout          ;
-; |animation|divide:u2|Add0~5                            ; |animation|divide:u2|Add0~7                            ; cout0            ;
-; |animation|divide:u2|Add0~5                            ; |animation|divide:u2|Add0~7COUT1_56                    ; cout1            ;
-; |animation|divide:u2|Add0~10                           ; |animation|divide:u2|Add0~10                           ; combout          ;
-; |animation|divide:u2|Add0~10                           ; |animation|divide:u2|Add0~12COUT1_66                   ; cout1            ;
-; |animation|divide:u2|Add0~15                           ; |animation|divide:u2|Add0~15                           ; combout          ;
-; |animation|divide:u2|Add0~15                           ; |animation|divide:u2|Add0~17COUT1_64                   ; cout1            ;
-; |animation|divide:u2|Add0~20                           ; |animation|divide:u2|Add0~20                           ; combout          ;
-; |animation|divide:u2|Add0~20                           ; |animation|divide:u2|Add0~22COUT1_62                   ; cout1            ;
-; |animation|divide:u2|Add0~25                           ; |animation|divide:u2|Add0~25                           ; combout          ;
-; |animation|divide:u2|Add0~25                           ; |animation|divide:u2|Add0~27                           ; cout             ;
-; |animation|divide:u2|Add0~30                           ; |animation|divide:u2|Add0~30                           ; combout          ;
-; |animation|divide:u2|Add0~30                           ; |animation|divide:u2|Add0~32                           ; cout0            ;
-; |animation|divide:u2|Add0~30                           ; |animation|divide:u2|Add0~32COUT1_60                   ; cout1            ;
-; |animation|divide:u2|Add0~35                           ; |animation|divide:u2|Add0~35                           ; combout          ;
-; |animation|divide:u2|Add0~42                           ; |animation|divide:u2|Add0~42                           ; cout0            ;
-; |animation|divide:u2|Add0~42                           ; |animation|divide:u2|Add0~42COUT1_54                   ; cout1            ;
+; |animation|divide1:u2|Add0~0                           ; |animation|divide1:u2|Add0~0                           ; combout          ;
+; |animation|divide1:u2|cntp[2]                          ; |animation|divide1:u2|Equal0~1                         ; combout          ;
+; |animation|divide1:u2|cntp[2]                          ; |animation|divide1:u2|cntp[2]                          ; regout           ;
+; |animation|divide1:u2|cntp[0]                          ; |animation|divide1:u2|cntp[0]                          ; regout           ;
+; |animation|divide1:u2|cntp[1]                          ; |animation|divide1:u2|Equal0~2                         ; combout          ;
+; |animation|divide1:u2|cntp[1]                          ; |animation|divide1:u2|cntp[1]                          ; regout           ;
+; |animation|divide1:u2|Add0~5                           ; |animation|divide1:u2|Add0~5                           ; combout          ;
+; |animation|divide1:u2|Add0~5                           ; |animation|divide1:u2|Add0~7                           ; cout0            ;
+; |animation|divide1:u2|Add0~5                           ; |animation|divide1:u2|Add0~7COUT1_66                   ; cout1            ;
+; |animation|divide1:u2|Add0~10                          ; |animation|divide1:u2|Add0~10                          ; combout          ;
+; |animation|divide1:u2|Add0~10                          ; |animation|divide1:u2|Add0~12                          ; cout0            ;
+; |animation|divide1:u2|Add0~10                          ; |animation|divide1:u2|Add0~12COUT1_64                  ; cout1            ;
+; |animation|divide1:u2|Add0~15                          ; |animation|divide1:u2|Add0~15                          ; combout          ;
+; |animation|divide1:u2|Add0~15                          ; |animation|divide1:u2|Add0~17COUT1_74                  ; cout1            ;
+; |animation|divide1:u2|Add0~20                          ; |animation|divide1:u2|Add0~20                          ; combout          ;
+; |animation|divide1:u2|Add0~20                          ; |animation|divide1:u2|Add0~22COUT1_72                  ; cout1            ;
+; |animation|divide1:u2|Add0~25                          ; |animation|divide1:u2|Add0~25                          ; combout          ;
+; |animation|divide1:u2|Add0~25                          ; |animation|divide1:u2|Add0~27COUT1_70                  ; cout1            ;
+; |animation|divide1:u2|Add0~30                          ; |animation|divide1:u2|Add0~30                          ; combout          ;
+; |animation|divide1:u2|Add0~30                          ; |animation|divide1:u2|Add0~32COUT1_68                  ; cout1            ;
+; |animation|divide1:u2|Add0~35                          ; |animation|divide1:u2|Add0~35                          ; combout          ;
+; |animation|divide1:u2|Add0~35                          ; |animation|divide1:u2|Add0~37                          ; cout             ;
+; |animation|divide1:u2|Add0~40                          ; |animation|divide1:u2|Add0~40                          ; combout          ;
+; |animation|divide1:u2|Add0~40                          ; |animation|divide1:u2|Add0~42                          ; cout0            ;
+; |animation|divide1:u2|Add0~40                          ; |animation|divide1:u2|Add0~42COUT1_62                  ; cout1            ;
+; |animation|divide1:u2|Add0~45                          ; |animation|divide1:u2|Add0~45                          ; combout          ;
+; |animation|divide1:u2|Add0~45                          ; |animation|divide1:u2|Add0~47                          ; cout0            ;
+; |animation|divide1:u2|Add0~45                          ; |animation|divide1:u2|Add0~47COUT1_60                  ; cout1            ;
 ; |animation|clk1khz                                     ; |animation|clk1khz~corein                              ; combout          ;
 ; |animation|dog                                         ; |animation|dog~corein                                  ; combout          ;
 ; |animation|r[0]                                        ; |animation|r[0]                                        ; padio            ;
@@ -264,9 +268,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |animation|dotmatric:u1|divide:u4|Add0~20        ; |animation|dotmatric:u1|divide:u4|Add0~22         ; cout0            ;
 ; |animation|dotmatric:u1|divide:u4|Add0~20        ; |animation|dotmatric:u1|divide:u4|Add0~22COUT1_62 ; cout1            ;
 ; |animation|dotmatric:u1|divide:u4|Add0~35        ; |animation|dotmatric:u1|divide:u4|Add0~37         ; cout             ;
-; |animation|divide:u2|Add0~10                     ; |animation|divide:u2|Add0~12                      ; cout0            ;
-; |animation|divide:u2|Add0~15                     ; |animation|divide:u2|Add0~17                      ; cout0            ;
-; |animation|divide:u2|Add0~20                     ; |animation|divide:u2|Add0~22                      ; cout0            ;
+; |animation|divide1:u2|Add0~15                    ; |animation|divide1:u2|Add0~17                     ; cout0            ;
+; |animation|divide1:u2|Add0~20                    ; |animation|divide1:u2|Add0~22                     ; cout0            ;
+; |animation|divide1:u2|Add0~25                    ; |animation|divide1:u2|Add0~27                     ; cout0            ;
+; |animation|divide1:u2|Add0~30                    ; |animation|divide1:u2|Add0~32                     ; cout0            ;
 ; |animation|off                                   ; |animation|off~corein                             ; combout          ;
 ; |animation|rst                                   ; |animation|rst~corein                             ; combout          ;
 ; |animation|mouse                                 ; |animation|mouse~corein                           ; combout          ;
@@ -309,9 +314,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |animation|dotmatric:u1|divide:u4|Add0~20        ; |animation|dotmatric:u1|divide:u4|Add0~22         ; cout0            ;
 ; |animation|dotmatric:u1|divide:u4|Add0~20        ; |animation|dotmatric:u1|divide:u4|Add0~22COUT1_62 ; cout1            ;
 ; |animation|dotmatric:u1|divide:u4|Add0~35        ; |animation|dotmatric:u1|divide:u4|Add0~37         ; cout             ;
-; |animation|divide:u2|Add0~10                     ; |animation|divide:u2|Add0~12                      ; cout0            ;
-; |animation|divide:u2|Add0~15                     ; |animation|divide:u2|Add0~17                      ; cout0            ;
-; |animation|divide:u2|Add0~20                     ; |animation|divide:u2|Add0~22                      ; cout0            ;
+; |animation|divide1:u2|Add0~15                    ; |animation|divide1:u2|Add0~17                     ; cout0            ;
+; |animation|divide1:u2|Add0~20                    ; |animation|divide1:u2|Add0~22                     ; cout0            ;
+; |animation|divide1:u2|Add0~25                    ; |animation|divide1:u2|Add0~27                     ; cout0            ;
+; |animation|divide1:u2|Add0~30                    ; |animation|divide1:u2|Add0~32                     ; cout0            ;
 ; |animation|off                                   ; |animation|off~corein                             ; combout          ;
 ; |animation|rst                                   ; |animation|rst~corein                             ; combout          ;
 ; |animation|mouse                                 ; |animation|mouse~corein                           ; combout          ;
@@ -331,22 +337,28 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Nov 21 11:56:17 2022
+    Info: Processing started: Tue Nov 22 10:13:34 2022
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off animation -c animation
 Info: Using vector source file "C:/Users/PYashmed/Desktop/CDAR/animation/animation.vwf"
 Info: Inverted registers were found during simulation
     Info: Register: |animation|dotmatric:u1|changemode:u3|cat[7]
     Info: Register: |animation|dotmatric:u1|changemode:u3|mouse[7]
     Info: Register: |animation|dotmatric:u1|changemode:u3|dog[7]
+    Info: Register: |animation|divide1:u2|cntp[9]
+    Info: Register: |animation|divide1:u2|cntp[3]
+    Info: Register: |animation|divide1:u2|cntp[8]
+    Info: Register: |animation|divide1:u2|cntp[7]
+    Info: Register: |animation|divide1:u2|cntp[6]
+    Info: Register: |animation|divide1:u2|cntp[5]
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      76.13 %
-Info: Number of transitions in simulation is 622136
+Info: Simulation coverage is      76.25 %
+Info: Number of transitions in simulation is 713019
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4318 megabytes
-    Info: Processing ended: Mon Nov 21 11:56:19 2022
+    Info: Peak virtual memory: 4319 megabytes
+    Info: Processing ended: Tue Nov 22 10:13:36 2022
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

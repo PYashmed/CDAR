@@ -1,38 +1,49 @@
-module divide (input clk,output clkout);
+module divide (input clk,rst,output clkout);
 	parameter	wide = 3;
 	parameter	n = 5;
  
 	reg [wide-1:0]	cntp,cntn;
 	reg clkp,clkn;
 	//上升沿触发时计数器的控制
-always @(posedge clk)
+always @(posedge clk or posedge rst)
 	begin
-		if (cntp==(n-1))
+		if(rst)begin
+			cntp<=0;
+		end
+		else if (cntp==(n-1))
 			cntp<=0;
 		else cntp<=cntp+1;//模n的计数器
 	end
 
 	//上升沿触发的分频时钟输出,如果n为奇数得到的时钟占空比不是50%；如果n为偶数得到的时钟占空比为50%
-always @(posedge clk)
+always @(posedge clk or posedge rst)
 	begin
-		if (cntp<(n>>1))//除以2去掉余数
+		if(rst)begin
+			clkp<=0;
+		end
+		else if (cntp<(n>>1))//除以2去掉余数
 			clkp<=0;
 		else 
 			clkp<=1;//得到的分频时钟正周期比负周期多一个clk时钟
 	end
 
 	//下降沿触发时计数器的控制
-always @(negedge clk)
+always @(negedge clk or posedge rst)
 	begin
-		if (cntn==(n-1))
+		if(rst)begin
+			cntn<=0;
+		end
+		else if (cntn==(n-1))
 			cntn<=0;
 		else cntn<=cntn+1;
 	end
 
 	//下降沿触发的分频时钟输出，和clkp相差半个时钟
-always @(negedge clk)
+always @(negedge clk or posedge rst)
 	begin
-		if (cntn<(n>>1))  
+		if(rst)
+			clkn<=0;
+		else if (cntn<(n>>1))  
 			clkn<=0;
 		else 
 			clkn<=1;//得到的分频时钟正周期比负周期多一个clk时钟

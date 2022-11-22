@@ -72,7 +72,7 @@ end
     reg enmove=0;//接受允许播放信号
     reg moveset=0;
     reg movedone=0;
-always @(posedge clk1hz or posedge off or posedge rst) begin
+always @(posedge clk1hz or posedge off or posedge rst or negedge enmove or posedge enmove) begin
     if(off || rst)begin
         movedone=0;
         move=2'b00;
@@ -80,6 +80,9 @@ always @(posedge clk1hz or posedge off or posedge rst) begin
         catisr=0;
         dogisr=0;
         mouseisr=0;
+    end
+    else if(~enmove)begin
+        movedone=0;
     end
     else begin
         movedone=0;
@@ -202,7 +205,7 @@ module dotmatric (
         .mouse(mouse),
         .rst(rst)
     );
-    divide #(.wide(10),.n(30)) u4(
+    divide #(.wide(10),.n(20)) u4(
         .clk(clk1khz),
         .clkout(clk1hz)
     );

@@ -1,5 +1,5 @@
 Flow report for animation
-Mon Nov 21 11:54:24 2022
+Tue Nov 22 10:13:31 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Flow Summary                                                         ;
 +---------------------------+------------------------------------------+
-; Flow Status               ; Successful - Mon Nov 21 11:54:24 2022    ;
+; Flow Status               ; Successful - Tue Nov 22 10:13:31 2022    ;
 ; Quartus II 64-Bit Version ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name             ; animation                                ;
 ; Top-level Entity Name     ; animation                                ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                    ; EPM1270T144C5                            ;
 ; Timing Models             ; Final                                    ;
 ; Met timing requirements   ; No                                       ;
-; Total logic elements      ; 104 / 1,270 ( 8 % )                      ;
+; Total logic elements      ; 107 / 1,270 ( 8 % )                      ;
 ; Total pins                ; 30 / 116 ( 26 % )                        ;
 ; Total virtual pins        ; 0                                        ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                            ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/21/2022 11:54:20 ;
+; Start date & time ; 11/22/2022 10:13:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; animation           ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+--------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                                                  ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+--------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 256134818288603.166900286015328                        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 256134818288603.166908320727916                        ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                                      ; --            ; --          ; --             ;
 ; MISC_FILE                             ; C:/Users/PYashmed/Desktop/CDAR/animation/animation.dpf ; --            ; --          ; --             ;
@@ -84,10 +84,10 @@ applicable agreement for further details.
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 4412 MB             ; 00:00:01                           ;
-; Fitter                  ; 00:00:01     ; 1.0                     ; 4507 MB             ; 00:00:02                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 4507 MB             ; 00:00:01                           ;
 ; Assembler               ; 00:00:00     ; 1.0                     ; 4364 MB             ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 4341 MB             ; 00:00:01                           ;
-; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 4342 MB             ; 00:00:01                           ;
+; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:03                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

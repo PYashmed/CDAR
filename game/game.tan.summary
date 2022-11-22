@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.998 ns
+From           : human
+To             : humanmove:u2|humanmove
+From Clock     : --
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.941 ns
+From           : humanmove:u2|led[2]
+To             : led[2]
+From Clock     : clk1khz
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.532 ns
+From           : rst
+To             : humanmove:u2|humanisr
+From Clock     : --
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk1khz'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 65.33 MHz ( period = 15.306 ns )
+From           : humanmove:u2|movedone
+To             : humanmove:u2|humanmove
+From Clock     : clk1khz
+To Clock       : clk1khz
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk1khz'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : humanmove:u2|humanmove
+To             : humanmove:u2|movedone
+From Clock     : clk1khz
+To Clock       : clk1khz
+Failed Paths   : 2
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 2
+
+--------------------------------------------------------------------------------------
+
