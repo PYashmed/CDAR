@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for game
-Tue Nov 22 12:53:38 2022
+Thu Nov 24 14:16:48 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -44,12 +44,12 @@ applicable agreement for further details.
 +------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
 ; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                   ; To                     ; From Clock ; To Clock ; Failed Paths ;
 +------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A                                      ; None          ; 1.998 ns                         ; human                  ; humanmove:u2|humanmove ; --         ; clk1khz  ; 0            ;
-; Worst-case tco               ; N/A                                      ; None          ; 14.941 ns                        ; humanmove:u2|led[2]    ; led[2]                 ; clk1khz    ; --       ; 0            ;
-; Worst-case th                ; N/A                                      ; None          ; 0.532 ns                         ; rst                    ; humanmove:u2|humanisr  ; --         ; clk1khz  ; 0            ;
-; Clock Setup: 'clk1khz'       ; N/A                                      ; None          ; 65.33 MHz ( period = 15.306 ns ) ; humanmove:u2|movedone  ; humanmove:u2|humanmove ; clk1khz    ; clk1khz  ; 0            ;
-; Clock Hold: 'clk1khz'        ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; humanmove:u2|humanmove ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; 2            ;
-; Total number of failed paths ;                                          ;               ;                                  ;                        ;                        ;            ;          ; 2            ;
+; Worst-case tsu               ; N/A                                      ; None          ; 2.337 ns                         ; human                  ; humanmove:u2|humansetr ; --         ; clk1khz  ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 16.557 ns                        ; humanmove:u2|led[14]   ; led[14]                ; clk1khz    ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; -1.308 ns                        ; human                  ; humanmove:u2|humanmove ; --         ; clk1khz  ; 0            ;
+; Clock Setup: 'clk1khz'       ; N/A                                      ; None          ; 57.69 MHz ( period = 17.334 ns ) ; humanmove:u2|movedone  ; humanmove:u2|humansetr ; clk1khz    ; clk1khz  ; 0            ;
+; Clock Hold: 'clk1khz'        ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; humanmove:u2|humansetr ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; 19           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                        ;                        ;            ;          ; 19           ;
 +------------------------------+------------------------------------------+---------------+----------------------------------+------------------------+------------------------+------------+----------+--------------+
 
 
@@ -118,206 +118,206 @@ applicable agreement for further details.
 +-----------------------------------------+-----------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 ; Slack                                   ; Actual fmax (period)                                ; From                  ; To                     ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
 +-----------------------------------------+-----------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A                                     ; 65.33 MHz ( period = 15.306 ns )                    ; humanmove:u2|movedone ; humanmove:u2|humanmove ; clk1khz    ; clk1khz  ; None                        ; None                      ; 1.769 ns                ;
-; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.315 ns               ;
-; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.315 ns               ;
-; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.315 ns               ;
-; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.315 ns               ;
-; N/A                                     ; 91.18 MHz ( period = 10.967 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.258 ns               ;
-; N/A                                     ; 91.18 MHz ( period = 10.967 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.258 ns               ;
-; N/A                                     ; 91.18 MHz ( period = 10.967 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.258 ns               ;
-; N/A                                     ; 91.18 MHz ( period = 10.967 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.258 ns               ;
-; N/A                                     ; 93.07 MHz ( period = 10.745 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.036 ns               ;
-; N/A                                     ; 93.07 MHz ( period = 10.745 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.036 ns               ;
-; N/A                                     ; 93.07 MHz ( period = 10.745 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.036 ns               ;
-; N/A                                     ; 93.07 MHz ( period = 10.745 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.036 ns               ;
-; N/A                                     ; 93.29 MHz ( period = 10.719 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.010 ns               ;
-; N/A                                     ; 93.29 MHz ( period = 10.719 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.010 ns               ;
-; N/A                                     ; 93.29 MHz ( period = 10.719 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.010 ns               ;
-; N/A                                     ; 93.29 MHz ( period = 10.719 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 10.010 ns               ;
-; N/A                                     ; 94.25 MHz ( period = 10.610 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.901 ns                ;
-; N/A                                     ; 94.25 MHz ( period = 10.610 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.901 ns                ;
-; N/A                                     ; 94.25 MHz ( period = 10.610 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.901 ns                ;
-; N/A                                     ; 94.25 MHz ( period = 10.610 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.901 ns                ;
-; N/A                                     ; 94.57 MHz ( period = 10.574 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.865 ns                ;
-; N/A                                     ; 94.57 MHz ( period = 10.574 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.865 ns                ;
-; N/A                                     ; 94.57 MHz ( period = 10.574 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.865 ns                ;
-; N/A                                     ; 94.57 MHz ( period = 10.574 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.865 ns                ;
-; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.843 ns                ;
-; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.843 ns                ;
-; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.843 ns                ;
-; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.843 ns                ;
-; N/A                                     ; 95.08 MHz ( period = 10.517 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.808 ns                ;
-; N/A                                     ; 95.08 MHz ( period = 10.517 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.808 ns                ;
-; N/A                                     ; 95.08 MHz ( period = 10.517 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.808 ns                ;
-; N/A                                     ; 95.08 MHz ( period = 10.517 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.808 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.71 MHz ( period = 10.448 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.739 ns                ;
-; N/A                                     ; 95.96 MHz ( period = 10.421 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.712 ns                ;
-; N/A                                     ; 95.96 MHz ( period = 10.421 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.712 ns                ;
-; N/A                                     ; 95.96 MHz ( period = 10.421 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.712 ns                ;
-; N/A                                     ; 95.96 MHz ( period = 10.421 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.712 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.682 ns                ;
-; N/A                                     ; 96.40 MHz ( period = 10.373 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.664 ns                ;
-; N/A                                     ; 96.40 MHz ( period = 10.373 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.664 ns                ;
-; N/A                                     ; 96.40 MHz ( period = 10.373 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.664 ns                ;
-; N/A                                     ; 96.40 MHz ( period = 10.373 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.664 ns                ;
-; N/A                                     ; 96.82 MHz ( period = 10.328 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.619 ns                ;
-; N/A                                     ; 96.82 MHz ( period = 10.328 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.619 ns                ;
-; N/A                                     ; 96.82 MHz ( period = 10.328 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.619 ns                ;
-; N/A                                     ; 96.82 MHz ( period = 10.328 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.619 ns                ;
-; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.553 ns                ;
-; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.553 ns                ;
-; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.553 ns                ;
-; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.553 ns                ;
-; N/A                                     ; 97.83 MHz ( period = 10.222 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.513 ns                ;
-; N/A                                     ; 97.83 MHz ( period = 10.222 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.513 ns                ;
-; N/A                                     ; 97.83 MHz ( period = 10.222 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.513 ns                ;
-; N/A                                     ; 97.83 MHz ( period = 10.222 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.513 ns                ;
-; N/A                                     ; 97.84 MHz ( period = 10.221 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.512 ns                ;
-; N/A                                     ; 97.84 MHz ( period = 10.221 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.512 ns                ;
-; N/A                                     ; 97.84 MHz ( period = 10.221 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.512 ns                ;
-; N/A                                     ; 97.84 MHz ( period = 10.221 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.512 ns                ;
-; N/A                                     ; 97.92 MHz ( period = 10.212 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.503 ns                ;
-; N/A                                     ; 97.92 MHz ( period = 10.212 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.503 ns                ;
-; N/A                                     ; 97.92 MHz ( period = 10.212 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.503 ns                ;
-; N/A                                     ; 97.92 MHz ( period = 10.212 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.503 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.34 MHz ( period = 10.169 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.460 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 98.59 MHz ( period = 10.143 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.434 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 99.66 MHz ( period = 10.034 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.325 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.02 MHz ( period = 9.998 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.289 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.24 MHz ( period = 9.976 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.267 ns                ;
-; N/A                                     ; 100.26 MHz ( period = 9.974 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.265 ns                ;
-; N/A                                     ; 100.26 MHz ( period = 9.974 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.265 ns                ;
-; N/A                                     ; 100.26 MHz ( period = 9.974 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.265 ns                ;
-; N/A                                     ; 100.26 MHz ( period = 9.974 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.265 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.232 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.57 MHz ( period = 9.845 ns )                    ; humanmove:u2|led[4]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.136 ns                ;
-; N/A                                     ; 101.97 MHz ( period = 9.807 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.098 ns                ;
-; N/A                                     ; 101.97 MHz ( period = 9.807 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.098 ns                ;
-; N/A                                     ; 101.97 MHz ( period = 9.807 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.098 ns                ;
-; N/A                                     ; 101.97 MHz ( period = 9.807 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.098 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.07 MHz ( period = 9.797 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.088 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 102.54 MHz ( period = 9.752 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.043 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.24 MHz ( period = 9.686 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.977 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.67 MHz ( period = 9.646 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.937 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.68 MHz ( period = 9.645 ns )                    ; humanmove:u2|led[3]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.936 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 103.78 MHz ( period = 9.636 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.927 ns                ;
-; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
-; N/A                                     ; 105.10 MHz ( period = 9.515 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.806 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 106.41 MHz ( period = 9.398 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.689 ns                ;
-; N/A                                     ; 107.61 MHz ( period = 9.293 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.584 ns                ;
-; N/A                                     ; 107.91 MHz ( period = 9.267 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.558 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 108.33 MHz ( period = 9.231 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.522 ns                ;
-; N/A                                     ; 109.19 MHz ( period = 9.158 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.449 ns                ;
-; N/A                                     ; 109.63 MHz ( period = 9.122 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.413 ns                ;
-; N/A                                     ; 109.89 MHz ( period = 9.100 ns )                    ; humanmove:u2|led[13]  ; humanmove:u2|movedone  ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.391 ns                ;
-; N/A                                     ; 110.20 MHz ( period = 9.074 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.365 ns                ;
-; N/A                                     ; 110.20 MHz ( period = 9.074 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.365 ns                ;
-; N/A                                     ; 110.20 MHz ( period = 9.074 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.365 ns                ;
-; N/A                                     ; 110.20 MHz ( period = 9.074 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.365 ns                ;
-; N/A                                     ; 110.20 MHz ( period = 9.074 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.365 ns                ;
+; N/A                                     ; 57.69 MHz ( period = 17.334 ns )                    ; humanmove:u2|movedone ; humanmove:u2|humansetr ; clk1khz    ; clk1khz  ; None                        ; None                      ; 2.017 ns                ;
+; N/A                                     ; 58.03 MHz ( period = 17.232 ns )                    ; humanmove:u2|humanisr ; humanmove:u2|humansetr ; clk1khz    ; clk1khz  ; None                        ; None                      ; 1.966 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 98.47 MHz ( period = 10.155 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.446 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 99.14 MHz ( period = 10.087 ns )                    ; humanmove:u2|led[0]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.378 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 100.99 MHz ( period = 9.902 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.193 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.06 MHz ( period = 9.895 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.186 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.69 MHz ( period = 9.834 ns )                    ; humanmove:u2|led[11]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.125 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 101.76 MHz ( period = 9.827 ns )                    ; humanmove:u2|led[15]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 9.118 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.22 MHz ( period = 9.595 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.886 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.47 MHz ( period = 9.572 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.863 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 104.96 MHz ( period = 9.527 ns )                    ; humanmove:u2|led[12]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; humanmove:u2|led[8]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.65 MHz ( period = 9.465 ns )                    ; humanmove:u2|led[7]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 105.81 MHz ( period = 9.451 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.742 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.701 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 106.58 MHz ( period = 9.383 ns )                    ; humanmove:u2|led[1]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.674 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.04 MHz ( period = 9.342 ns )                    ; humanmove:u2|led[6]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 107.93 MHz ( period = 9.265 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.556 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.03 MHz ( period = 9.257 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.548 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.18 MHz ( period = 9.244 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.535 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[6]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; humanmove:u2|led[14]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.83 MHz ( period = 9.189 ns )                    ; humanmove:u2|led[10]  ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; humanmove:u2|led[9]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.467 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[7]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[8]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[9]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[10]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[11]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[12]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[13]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[14]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; humanmove:u2|led[2]   ; humanmove:u2|led[15]   ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[0]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[1]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[2]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[3]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[4]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; humanmove:u2|led[5]   ; humanmove:u2|led[5]    ; clk1khz    ; clk1khz  ; None                        ; None                      ; 8.407 ns                ;
 ; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                       ;                        ;            ;          ;                             ;                           ;                         ;
 +-----------------------------------------+-----------------------------------------------------+-----------------------+------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
@@ -327,8 +327,25 @@ applicable agreement for further details.
 +------------------------------------------+------------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
 ; Minimum Slack                            ; From                   ; To                    ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
 +------------------------------------------+------------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
-; Not operational: Clock Skew > Data Delay ; humanmove:u2|humanmove ; humanmove:u2|movedone ; clk1khz    ; clk1khz  ; None                       ; None                       ; 1.995 ns                 ;
-; Not operational: Clock Skew > Data Delay ; humanmove:u2|humanmove ; humanmove:u2|humanisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 4.827 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[15]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.948 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|humanisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 2.976 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[7]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.294 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[9]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.295 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[8]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.303 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[13]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.513 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[12]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.516 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[11]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.525 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[10]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.528 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[14]  ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.528 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[3]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.547 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[0]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.558 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[2]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.567 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[5]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.570 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[4]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.571 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[1]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 3.572 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|led[6]   ; clk1khz    ; clk1khz  ; None                       ; None                       ; 4.554 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humanmove ; humanmove:u2|humanisr ; clk1khz    ; clk1khz  ; None                       ; None                       ; 4.874 ns                 ;
+; Not operational: Clock Skew > Data Delay ; humanmove:u2|humansetr ; humanmove:u2|movedone ; clk1khz    ; clk1khz  ; None                       ; None                       ; 5.035 ns                 ;
 +------------------------------------------+------------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
 
 
@@ -337,11 +354,8 @@ applicable agreement for further details.
 +-------+--------------+------------+-------+------------------------+----------+
 ; Slack ; Required tsu ; Actual tsu ; From  ; To                     ; To Clock ;
 +-------+--------------+------------+-------+------------------------+----------+
-; N/A   ; None         ; 1.998 ns   ; human ; humanmove:u2|humanmove ; clk1khz  ;
-; N/A   ; None         ; 0.834 ns   ; off   ; humanmove:u2|movedone  ; clk1khz  ;
-; N/A   ; None         ; 0.777 ns   ; off   ; humanmove:u2|humanisr  ; clk1khz  ;
-; N/A   ; None         ; 0.079 ns   ; rst   ; humanmove:u2|movedone  ; clk1khz  ;
-; N/A   ; None         ; 0.022 ns   ; rst   ; humanmove:u2|humanisr  ; clk1khz  ;
+; N/A   ; None         ; 2.337 ns   ; human ; humanmove:u2|humansetr ; clk1khz  ;
+; N/A   ; None         ; 1.862 ns   ; human ; humanmove:u2|humanmove ; clk1khz  ;
 +-------+--------------+------------+-------+------------------------+----------+
 
 
@@ -350,22 +364,22 @@ applicable agreement for further details.
 +-------+--------------+------------+----------------------+---------+------------+
 ; Slack ; Required tco ; Actual tco ; From                 ; To      ; From Clock ;
 +-------+--------------+------------+----------------------+---------+------------+
-; N/A   ; None         ; 14.941 ns  ; humanmove:u2|led[2]  ; led[2]  ; clk1khz    ;
-; N/A   ; None         ; 14.911 ns  ; humanmove:u2|led[14] ; led[14] ; clk1khz    ;
-; N/A   ; None         ; 14.742 ns  ; humanmove:u2|led[12] ; led[12] ; clk1khz    ;
-; N/A   ; None         ; 14.454 ns  ; humanmove:u2|led[9]  ; led[9]  ; clk1khz    ;
-; N/A   ; None         ; 14.330 ns  ; humanmove:u2|led[11] ; led[11] ; clk1khz    ;
-; N/A   ; None         ; 14.276 ns  ; humanmove:u2|led[3]  ; led[3]  ; clk1khz    ;
-; N/A   ; None         ; 14.248 ns  ; humanmove:u2|led[4]  ; led[4]  ; clk1khz    ;
-; N/A   ; None         ; 14.204 ns  ; humanmove:u2|led[15] ; led[15] ; clk1khz    ;
-; N/A   ; None         ; 13.872 ns  ; humanmove:u2|led[7]  ; led[7]  ; clk1khz    ;
-; N/A   ; None         ; 13.836 ns  ; humanmove:u2|led[1]  ; led[1]  ; clk1khz    ;
-; N/A   ; None         ; 13.812 ns  ; humanmove:u2|led[10] ; led[10] ; clk1khz    ;
-; N/A   ; None         ; 13.797 ns  ; humanmove:u2|led[13] ; led[13] ; clk1khz    ;
-; N/A   ; None         ; 13.714 ns  ; humanmove:u2|led[6]  ; led[6]  ; clk1khz    ;
-; N/A   ; None         ; 13.709 ns  ; humanmove:u2|led[0]  ; led[0]  ; clk1khz    ;
-; N/A   ; None         ; 13.704 ns  ; humanmove:u2|led[5]  ; led[5]  ; clk1khz    ;
-; N/A   ; None         ; 12.465 ns  ; humanmove:u2|led[8]  ; led[8]  ; clk1khz    ;
+; N/A   ; None         ; 16.557 ns  ; humanmove:u2|led[14] ; led[14] ; clk1khz    ;
+; N/A   ; None         ; 16.488 ns  ; humanmove:u2|led[2]  ; led[2]  ; clk1khz    ;
+; N/A   ; None         ; 16.359 ns  ; humanmove:u2|led[12] ; led[12] ; clk1khz    ;
+; N/A   ; None         ; 16.340 ns  ; humanmove:u2|led[13] ; led[13] ; clk1khz    ;
+; N/A   ; None         ; 16.340 ns  ; humanmove:u2|led[11] ; led[11] ; clk1khz    ;
+; N/A   ; None         ; 16.332 ns  ; humanmove:u2|led[4]  ; led[4]  ; clk1khz    ;
+; N/A   ; None         ; 16.285 ns  ; humanmove:u2|led[8]  ; led[8]  ; clk1khz    ;
+; N/A   ; None         ; 15.784 ns  ; humanmove:u2|led[15] ; led[15] ; clk1khz    ;
+; N/A   ; None         ; 15.782 ns  ; humanmove:u2|led[0]  ; led[0]  ; clk1khz    ;
+; N/A   ; None         ; 15.370 ns  ; humanmove:u2|led[3]  ; led[3]  ; clk1khz    ;
+; N/A   ; None         ; 15.207 ns  ; humanmove:u2|led[5]  ; led[5]  ; clk1khz    ;
+; N/A   ; None         ; 15.146 ns  ; humanmove:u2|led[10] ; led[10] ; clk1khz    ;
+; N/A   ; None         ; 15.124 ns  ; humanmove:u2|led[7]  ; led[7]  ; clk1khz    ;
+; N/A   ; None         ; 15.023 ns  ; humanmove:u2|led[9]  ; led[9]  ; clk1khz    ;
+; N/A   ; None         ; 14.753 ns  ; humanmove:u2|led[1]  ; led[1]  ; clk1khz    ;
+; N/A   ; None         ; 14.626 ns  ; humanmove:u2|led[6]  ; led[6]  ; clk1khz    ;
 +-------+--------------+------------+----------------------+---------+------------+
 
 
@@ -374,11 +388,8 @@ applicable agreement for further details.
 +---------------+-------------+-----------+-------+------------------------+----------+
 ; Minimum Slack ; Required th ; Actual th ; From  ; To                     ; To Clock ;
 +---------------+-------------+-----------+-------+------------------------+----------+
-; N/A           ; None        ; 0.532 ns  ; rst   ; humanmove:u2|humanisr  ; clk1khz  ;
-; N/A           ; None        ; 0.475 ns  ; rst   ; humanmove:u2|movedone  ; clk1khz  ;
-; N/A           ; None        ; -0.223 ns ; off   ; humanmove:u2|humanisr  ; clk1khz  ;
-; N/A           ; None        ; -0.280 ns ; off   ; humanmove:u2|movedone  ; clk1khz  ;
-; N/A           ; None        ; -1.444 ns ; human ; humanmove:u2|humanmove ; clk1khz  ;
+; N/A           ; None        ; -1.308 ns ; human ; humanmove:u2|humanmove ; clk1khz  ;
+; N/A           ; None        ; -1.783 ns ; human ; humanmove:u2|humansetr ; clk1khz  ;
 +---------------+-------------+-----------+-------+------------------------+----------+
 
 
@@ -388,7 +399,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Tue Nov 22 12:53:38 2022
+    Info: Processing started: Thu Nov 24 14:16:48 2022
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off game -c game
 Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info: Started post-fitting delay annotation
@@ -397,91 +408,90 @@ Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "clk1khz" is an undefined clock
 Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
     Info: Detected ripple clock "humanmove:u2|divide:u1|clkp" as buffer
-Info: Clock "clk1khz" has Internal fmax of 65.33 MHz between source register "humanmove:u2|movedone" and destination register "humanmove:u2|humanmove" (period= 15.306 ns)
-    Info: + Longest register to register delay is 1.769 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X1_Y7_N4; Fanout = 2; REG Node = 'humanmove:u2|movedone'
-        Info: 2: + IC(0.965 ns) + CELL(0.804 ns) = 1.769 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
-        Info: Total cell delay = 0.804 ns ( 45.45 % )
-        Info: Total interconnect delay = 0.965 ns ( 54.55 % )
-    Info: - Smallest clock skew is -5.175 ns
+Info: Clock "clk1khz" has Internal fmax of 57.69 MHz between source register "humanmove:u2|movedone" and destination register "humanmove:u2|humansetr" (period= 17.334 ns)
+    Info: + Longest register to register delay is 2.017 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y5_N8; Fanout = 3; REG Node = 'humanmove:u2|movedone'
+        Info: 2: + IC(0.921 ns) + CELL(0.200 ns) = 1.121 ns; Loc. = LC_X12_Y5_N0; Fanout = 1; COMB Node = 'humanmove:u2|humansetr~0'
+        Info: 3: + IC(0.305 ns) + CELL(0.591 ns) = 2.017 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
+        Info: Total cell delay = 0.791 ns ( 39.22 % )
+        Info: Total interconnect delay = 1.226 ns ( 60.78 % )
+    Info: - Smallest clock skew is -5.941 ns
         Info: + Shortest clock path from clock "clk1khz" to destination register is 3.819 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
             Info: Total cell delay = 2.081 ns ( 54.49 % )
             Info: Total interconnect delay = 1.738 ns ( 45.51 % )
-        Info: - Longest clock path from clock "clk1khz" to source register is 8.994 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y5_N2; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
-            Info: 3: + IC(3.881 ns) + CELL(0.918 ns) = 8.994 ns; Loc. = LC_X1_Y7_N4; Fanout = 2; REG Node = 'humanmove:u2|movedone'
-            Info: Total cell delay = 3.375 ns ( 37.53 % )
-            Info: Total interconnect delay = 5.619 ns ( 62.47 % )
+        Info: - Longest clock path from clock "clk1khz" to source register is 9.760 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X11_Y8_N0; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
+            Info: 3: + IC(4.647 ns) + CELL(0.918 ns) = 9.760 ns; Loc. = LC_X12_Y5_N8; Fanout = 3; REG Node = 'humanmove:u2|movedone'
+            Info: Total cell delay = 3.375 ns ( 34.58 % )
+            Info: Total interconnect delay = 6.385 ns ( 65.42 % )
     Info: + Micro clock to output delay of source is 0.376 ns
     Info: + Micro setup delay of destination is 0.333 ns
     Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
-Warning: Circuit may not operate. Detected 2 non-operational path(s) clocked by clock "clk1khz" with clock skew larger than data delay. See Compilation Report for details.
-Info: Found hold time violation between source  pin or register "humanmove:u2|humanmove" and destination pin or register "humanmove:u2|movedone" for clock "clk1khz" (Hold time is 3.025 ns)
-    Info: + Largest clock skew is 5.175 ns
-        Info: + Longest clock path from clock "clk1khz" to destination register is 8.994 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y5_N2; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
-            Info: 3: + IC(3.881 ns) + CELL(0.918 ns) = 8.994 ns; Loc. = LC_X1_Y7_N4; Fanout = 2; REG Node = 'humanmove:u2|movedone'
-            Info: Total cell delay = 3.375 ns ( 37.53 % )
-            Info: Total interconnect delay = 5.619 ns ( 62.47 % )
+Warning: Circuit may not operate. Detected 19 non-operational path(s) clocked by clock "clk1khz" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "humanmove:u2|humansetr" and destination pin or register "humanmove:u2|led[15]" for clock "clk1khz" (Hold time is 2.838 ns)
+    Info: + Largest clock skew is 5.941 ns
+        Info: + Longest clock path from clock "clk1khz" to destination register is 9.760 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X11_Y8_N0; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
+            Info: 3: + IC(4.647 ns) + CELL(0.918 ns) = 9.760 ns; Loc. = LC_X13_Y6_N4; Fanout = 3; REG Node = 'humanmove:u2|led[15]'
+            Info: Total cell delay = 3.375 ns ( 34.58 % )
+            Info: Total interconnect delay = 6.385 ns ( 65.42 % )
         Info: - Shortest clock path from clock "clk1khz" to source register is 3.819 ns
-            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
             Info: Total cell delay = 2.081 ns ( 54.49 % )
             Info: Total interconnect delay = 1.738 ns ( 45.51 % )
     Info: - Micro clock to output delay of source is 0.376 ns
-    Info: - Shortest register to register delay is 1.995 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
-        Info: 2: + IC(0.934 ns) + CELL(1.061 ns) = 1.995 ns; Loc. = LC_X1_Y7_N4; Fanout = 2; REG Node = 'humanmove:u2|movedone'
-        Info: Total cell delay = 1.061 ns ( 53.18 % )
-        Info: Total interconnect delay = 0.934 ns ( 46.82 % )
+    Info: - Shortest register to register delay is 2.948 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
+        Info: 2: + IC(2.357 ns) + CELL(0.591 ns) = 2.948 ns; Loc. = LC_X13_Y6_N4; Fanout = 3; REG Node = 'humanmove:u2|led[15]'
+        Info: Total cell delay = 0.591 ns ( 20.05 % )
+        Info: Total interconnect delay = 2.357 ns ( 79.95 % )
     Info: + Micro hold delay of destination is 0.221 ns
     Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
-Info: tsu for register "humanmove:u2|humanmove" (data pin = "human", clock pin = "clk1khz") is 1.998 ns
-    Info: + Longest pin to register delay is 5.484 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 12; PIN Node = 'human'
-        Info: 2: + IC(3.730 ns) + CELL(0.591 ns) = 5.484 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
-        Info: Total cell delay = 1.754 ns ( 31.98 % )
-        Info: Total interconnect delay = 3.730 ns ( 68.02 % )
+Info: tsu for register "humanmove:u2|humansetr" (data pin = "human", clock pin = "clk1khz") is 2.337 ns
+    Info: + Longest pin to register delay is 5.823 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 13; PIN Node = 'human'
+        Info: 2: + IC(3.856 ns) + CELL(0.804 ns) = 5.823 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
+        Info: Total cell delay = 1.967 ns ( 33.78 % )
+        Info: Total interconnect delay = 3.856 ns ( 66.22 % )
     Info: + Micro setup delay of destination is 0.333 ns
     Info: - Shortest clock path from clock "clk1khz" to destination register is 3.819 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X1_Y7_N0; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X12_Y5_N1; Fanout = 19; REG Node = 'humanmove:u2|humansetr'
         Info: Total cell delay = 2.081 ns ( 54.49 % )
         Info: Total interconnect delay = 1.738 ns ( 45.51 % )
-Info: tco from clock "clk1khz" to destination pin "led[2]" through register "humanmove:u2|led[2]" is 14.941 ns
-    Info: + Longest clock path from clock "clk1khz" to source register is 8.994 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y5_N2; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
-        Info: 3: + IC(3.881 ns) + CELL(0.918 ns) = 8.994 ns; Loc. = LC_X9_Y7_N5; Fanout = 4; REG Node = 'humanmove:u2|led[2]'
-        Info: Total cell delay = 3.375 ns ( 37.53 % )
-        Info: Total interconnect delay = 5.619 ns ( 62.47 % )
+Info: tco from clock "clk1khz" to destination pin "led[14]" through register "humanmove:u2|led[14]" is 16.557 ns
+    Info: + Longest clock path from clock "clk1khz" to source register is 9.760 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X11_Y8_N0; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
+        Info: 3: + IC(4.647 ns) + CELL(0.918 ns) = 9.760 ns; Loc. = LC_X13_Y6_N5; Fanout = 4; REG Node = 'humanmove:u2|led[14]'
+        Info: Total cell delay = 3.375 ns ( 34.58 % )
+        Info: Total interconnect delay = 6.385 ns ( 65.42 % )
     Info: + Micro clock to output delay of source is 0.376 ns
-    Info: + Longest register to pin delay is 5.571 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y7_N5; Fanout = 4; REG Node = 'humanmove:u2|led[2]'
-        Info: 2: + IC(3.249 ns) + CELL(2.322 ns) = 5.571 ns; Loc. = PIN_104; Fanout = 0; PIN Node = 'led[2]'
-        Info: Total cell delay = 2.322 ns ( 41.68 % )
-        Info: Total interconnect delay = 3.249 ns ( 58.32 % )
-Info: th for register "humanmove:u2|humanisr" (data pin = "rst", clock pin = "clk1khz") is 0.532 ns
-    Info: + Longest clock path from clock "clk1khz" to destination register is 8.994 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 12; CLK Node = 'clk1khz'
-        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y5_N2; Fanout = 18; REG Node = 'humanmove:u2|divide:u1|clkp'
-        Info: 3: + IC(3.881 ns) + CELL(0.918 ns) = 8.994 ns; Loc. = LC_X9_Y7_N8; Fanout = 18; REG Node = 'humanmove:u2|humanisr'
-        Info: Total cell delay = 3.375 ns ( 37.53 % )
-        Info: Total interconnect delay = 5.619 ns ( 62.47 % )
+    Info: + Longest register to pin delay is 6.421 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X13_Y6_N5; Fanout = 4; REG Node = 'humanmove:u2|led[14]'
+        Info: 2: + IC(4.099 ns) + CELL(2.322 ns) = 6.421 ns; Loc. = PIN_2; Fanout = 0; PIN Node = 'led[14]'
+        Info: Total cell delay = 2.322 ns ( 36.16 % )
+        Info: Total interconnect delay = 4.099 ns ( 63.84 % )
+Info: th for register "humanmove:u2|humanmove" (data pin = "human", clock pin = "clk1khz") is -1.308 ns
+    Info: + Longest clock path from clock "clk1khz" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 13; CLK Node = 'clk1khz'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X2_Y5_N2; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
     Info: + Micro hold delay of destination is 0.221 ns
-    Info: - Shortest pin to register delay is 8.683 ns
-        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_101; Fanout = 3; PIN Node = 'rst'
-        Info: 2: + IC(3.166 ns) + CELL(0.740 ns) = 5.038 ns; Loc. = LC_X8_Y8_N8; Fanout = 18; COMB Node = 'humanmove:u2|movedone~0'
-        Info: 3: + IC(3.054 ns) + CELL(0.591 ns) = 8.683 ns; Loc. = LC_X9_Y7_N8; Fanout = 18; REG Node = 'humanmove:u2|humanisr'
-        Info: Total cell delay = 2.463 ns ( 28.37 % )
-        Info: Total interconnect delay = 6.220 ns ( 71.63 % )
+    Info: - Shortest pin to register delay is 5.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_20; Fanout = 13; PIN Node = 'human'
+        Info: 2: + IC(3.124 ns) + CELL(1.061 ns) = 5.348 ns; Loc. = LC_X2_Y5_N2; Fanout = 5; REG Node = 'humanmove:u2|humanmove'
+        Info: Total cell delay = 2.224 ns ( 41.59 % )
+        Info: Total interconnect delay = 3.124 ns ( 58.41 % )
 Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4361 megabytes
-    Info: Processing ended: Tue Nov 22 12:53:38 2022
+    Info: Processing ended: Thu Nov 24 14:16:48 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

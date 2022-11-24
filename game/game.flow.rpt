@@ -1,5 +1,5 @@
 Flow report for game
-Tue Nov 22 12:53:38 2022
+Thu Nov 24 14:16:48 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Flow Summary                                                         ;
 +---------------------------+------------------------------------------+
-; Flow Status               ; Successful - Tue Nov 22 12:53:38 2022    ;
+; Flow Status               ; Successful - Thu Nov 24 14:16:48 2022    ;
 ; Quartus II 64-Bit Version ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name             ; game                                     ;
 ; Top-level Entity Name     ; game                                     ;
@@ -47,7 +47,7 @@ applicable agreement for further details.
 ; Timing Models             ; Final                                    ;
 ; Met timing requirements   ; No                                       ;
 ; Total logic elements      ; 51 / 1,270 ( 4 % )                       ;
-; Total pins                ; 47 / 116 ( 41 % )                        ;
+; Total pins                ; 23 / 116 ( 20 % )                        ;
 ; Total virtual pins        ; 0                                        ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                            ;
 +---------------------------+------------------------------------------+
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2022 12:53:35 ;
+; Start date & time ; 11/24/2022 14:16:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; game                ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 256134818288603.166909281440300 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 256134818288603.166927060545696 ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                               ; --            ; --          ; --             ;
 ; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                            ; --            ; --          ; --             ;
@@ -82,11 +82,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 4411 MB             ; 00:00:01                           ;
-; Fitter                  ; 00:00:00     ; 1.0                     ; 4506 MB             ; 00:00:01                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 4364 MB             ; 00:00:00                           ;
+; Analysis & Synthesis    ; 00:00:00     ; 1.0                     ; 4411 MB             ; 00:00:01                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 4506 MB             ; 00:00:01                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 4364 MB             ; 00:00:00                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 4342 MB             ; 00:00:00                           ;
-; Total                   ; 00:00:01     ; --                      ; --                  ; 00:00:02                           ;
+; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

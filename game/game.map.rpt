@@ -1,5 +1,5 @@
 Analysis & Synthesis report for game
-Tue Nov 22 12:53:35 2022
+Thu Nov 24 14:16:45 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -14,9 +14,11 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: humanmove:u2|divide:u1
- 11. Analysis & Synthesis Messages
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: humanmove:u2|divide:u1
+ 12. Port Connectivity Checks: "humanmove:u2"
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -42,13 +44,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Nov 22 12:53:35 2022    ;
+; Analysis & Synthesis Status ; Successful - Thu Nov 24 14:16:45 2022    ;
 ; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; game                                     ;
 ; Top-level Entity Name       ; game                                     ;
 ; Family                      ; MAX II                                   ;
 ; Total logic elements        ; 53                                       ;
-; Total pins                  ; 47                                       ;
+; Total pins                  ; 23                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -147,39 +149,39 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+--------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                         ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 53                    ;
-;     -- Combinational with no register       ; 23                    ;
-;     -- Register only                        ; 4                     ;
-;     -- Combinational with a register        ; 26                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 11                    ;
-;     -- 3 input functions                    ; 18                    ;
-;     -- 2 input functions                    ; 19                    ;
-;     -- 1 input functions                    ; 1                     ;
-;     -- 0 input functions                    ; 0                     ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 44                    ;
-;     -- arithmetic mode                      ; 9                     ;
-;     -- qfbk mode                            ; 0                     ;
-;     -- register cascade mode                ; 0                     ;
-;     -- synchronous clear/load mode          ; 0                     ;
-;     -- asynchronous clear/load mode         ; 29                    ;
-;                                             ;                       ;
-; Total registers                             ; 30                    ;
-; Total logic cells in carry chains           ; 10                    ;
-; I/O pins                                    ; 47                    ;
-; Maximum fan-out node                        ; humanmove:u2|humanisr ;
-; Maximum fan-out                             ; 18                    ;
-; Total fan-out                               ; 233                   ;
-; Average fan-out                             ; 2.33                  ;
-+---------------------------------------------+-----------------------+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 53                     ;
+;     -- Combinational with no register       ; 22                     ;
+;     -- Register only                        ; 4                      ;
+;     -- Combinational with a register        ; 27                     ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 11                     ;
+;     -- 3 input functions                    ; 16                     ;
+;     -- 2 input functions                    ; 21                     ;
+;     -- 1 input functions                    ; 1                      ;
+;     -- 0 input functions                    ; 0                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 44                     ;
+;     -- arithmetic mode                      ; 9                      ;
+;     -- qfbk mode                            ; 0                      ;
+;     -- register cascade mode                ; 0                      ;
+;     -- synchronous clear/load mode          ; 0                      ;
+;     -- asynchronous clear/load mode         ; 13                     ;
+;                                             ;                        ;
+; Total registers                             ; 31                     ;
+; Total logic cells in carry chains           ; 10                     ;
+; I/O pins                                    ; 23                     ;
+; Maximum fan-out node                        ; humanmove:u2|humansetr ;
+; Maximum fan-out                             ; 19                     ;
+; Total fan-out                               ; 215                    ;
+; Average fan-out                             ; 2.83                   ;
++---------------------------------------------+------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,8 +189,8 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name          ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+--------------+
-; |game                      ; 53 (0)      ; 30           ; 0          ; 47   ; 0            ; 23 (0)       ; 4 (0)             ; 26 (0)           ; 10 (0)          ; 0 (0)      ; |game                        ; work         ;
-;    |humanmove:u2|          ; 53 (28)     ; 30           ; 0          ; 0    ; 0            ; 23 (9)       ; 4 (0)             ; 26 (19)          ; 10 (0)          ; 0 (0)      ; |game|humanmove:u2           ; work         ;
+; |game                      ; 53 (0)      ; 31           ; 0          ; 23   ; 0            ; 22 (0)       ; 4 (0)             ; 27 (0)           ; 10 (0)          ; 0 (0)      ; |game                        ; work         ;
+;    |humanmove:u2|          ; 53 (28)     ; 31           ; 0          ; 0    ; 0            ; 22 (8)       ; 4 (0)             ; 27 (20)          ; 10 (0)          ; 0 (0)      ; |game|humanmove:u2           ; work         ;
 ;       |divide:u1|          ; 25 (25)     ; 11           ; 0          ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 7 (7)            ; 10 (10)         ; 0 (0)      ; |game|humanmove:u2|divide:u1 ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -199,14 +201,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
+; Total registers                              ; 31    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 29    ;
-; Number of registers using Asynchronous Load  ; 1     ;
+; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; humanmove:u2|led[15]                   ; 3       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -230,13 +242,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "humanmove:u2"                                                                                                                                                                        ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; off     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; off[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Tue Nov 22 12:53:34 2022
+    Info: Processing started: Thu Nov 24 14:16:45 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game -c game
 Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
 Warning: Entity "divide" obtained from "C:/Users/PYashmed/Desktop/CDAR/game/game.v" instead of from Quartus II megafunction library
@@ -244,52 +268,27 @@ Info: Found 3 design units, including 3 entities, in source file game.v
     Info: Found entity 1: game
     Info: Found entity 2: humanmove
     Info: Found entity 3: divide
-Warning (10236): Verilog HDL Implicit Net warning at game.v(33): created implicit net for "clk25mhz"
+Warning (10236): Verilog HDL Implicit Net warning at game.v(34): created implicit net for "clk25mhz"
 Info: Elaborating entity "game" for the top level hierarchy
-Warning (10034): Output port "row" at game.v(2) has no driver
-Warning (10034): Output port "r" at game.v(2) has no driver
-Warning (10034): Output port "g" at game.v(2) has no driver
 Info: Elaborating entity "humanmove" for hierarchy "humanmove:u2"
 Info: Elaborating entity "divide" for hierarchy "humanmove:u2|divide:u1"
-Warning (10230): Verilog HDL assignment warning at game.v(139): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at game.v(162): truncated value with size 32 to match size of target (10)
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "row[0]" is stuck at GND
-    Warning (13410): Pin "row[1]" is stuck at GND
-    Warning (13410): Pin "row[2]" is stuck at GND
-    Warning (13410): Pin "row[3]" is stuck at GND
-    Warning (13410): Pin "row[4]" is stuck at GND
-    Warning (13410): Pin "row[5]" is stuck at GND
-    Warning (13410): Pin "row[6]" is stuck at GND
-    Warning (13410): Pin "row[7]" is stuck at GND
-    Warning (13410): Pin "r[0]" is stuck at GND
-    Warning (13410): Pin "r[1]" is stuck at GND
-    Warning (13410): Pin "r[2]" is stuck at GND
-    Warning (13410): Pin "r[3]" is stuck at GND
-    Warning (13410): Pin "r[4]" is stuck at GND
-    Warning (13410): Pin "r[5]" is stuck at GND
-    Warning (13410): Pin "r[6]" is stuck at GND
-    Warning (13410): Pin "r[7]" is stuck at GND
-    Warning (13410): Pin "g[0]" is stuck at GND
-    Warning (13410): Pin "g[1]" is stuck at GND
-    Warning (13410): Pin "g[2]" is stuck at GND
-    Warning (13410): Pin "g[3]" is stuck at GND
-    Warning (13410): Pin "g[4]" is stuck at GND
-    Warning (13410): Pin "g[5]" is stuck at GND
-    Warning (13410): Pin "g[6]" is stuck at GND
-    Warning (13410): Pin "g[7]" is stuck at GND
-Warning: Design contains 3 input pin(s) that do not drive logic
+Warning (10230): Verilog HDL assignment warning at game.v(146): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at game.v(169): truncated value with size 32 to match size of target (10)
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "cat"
     Warning (15610): No output dependent on input pin "dog"
     Warning (15610): No output dependent on input pin "mouse"
-Info: Implemented 100 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "rst"
+    Warning (15610): No output dependent on input pin "off"
+Info: Implemented 76 device resources after synthesis - the final resource count might be different
     Info: Implemented 7 input pins
-    Info: Implemented 40 output pins
+    Info: Implemented 16 output pins
     Info: Implemented 53 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 36 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 4411 megabytes
-    Info: Processing ended: Tue Nov 22 12:53:35 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Nov 24 14:16:45 2022
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

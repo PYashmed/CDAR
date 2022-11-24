@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue Nov 22 12:53:36 2022
+Fitter Status : Successful - Thu Nov 24 14:16:47 2022
 Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : game
 Top-level Entity Name : game
@@ -6,6 +6,6 @@ Family : MAX II
 Device : EPM1270T144C5
 Timing Models : Final
 Total logic elements : 51 / 1,270 ( 4 % )
-Total pins : 47 / 116 ( 41 % )
+Total pins : 23 / 116 ( 20 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

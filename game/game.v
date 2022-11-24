@@ -1,6 +1,7 @@
 module game (
-    input clk1khz,cat,dog,mouse,human,rst,off,output reg [7:0]row,r,g,output [15:0]led
+    input clk1khz,cat,dog,mouse,human,rst,off,output [15:0]led
 );
+// output reg [7:0]row,r,g,
     // animation u1(
     //     .cat(cat),
     //     .dog(dog),
@@ -15,8 +16,8 @@ module game (
     humanmove u2(
         .human(human),
         .clk1khz(clk1khz),
-        .rst(rst),
-        .off(off),
+        .rst(0),
+        .off(0),
         .led(led)
     );
 
@@ -33,12 +34,17 @@ module humanmove(
         .clkout(clk25mhz)
     );
 
-
+initial begin
+    led=16'b1000_0000_0000_0000;
+end
 
 
     reg humanisr,humanmove,movedone;
-always @(posedge clk1khz or posedge off or posedge rst) begin
-    if(off||rst)begin
+always @(posedge clk1khz or posedge off or posedge rst or posedge movedone) begin
+    if(off)begin
+        humanmove=0;
+    end
+    else if(rst)begin
         humanmove=0;
     end
     else if(movedone)begin
@@ -47,23 +53,24 @@ always @(posedge clk1khz or posedge off or posedge rst) begin
     else if(humanmove==0)begin
         if(human)begin
             humanmove=1;
+            humansetr=humanisr;
         end
     end
 end
-
+    reg humansetr=0;
 always @(negedge clk25mhz or posedge rst or posedge off or negedge humanmove) begin
     if(off)begin
         led=0;
     end
     else if(rst)begin
-        led=16'b0000_0000_0000_0001;
+        led=16'b1000_0000_0000_0000;
     end
     else if(~humanmove)begin
         movedone=0;
     end
     else begin
         if(humanmove)begin
-            if(humanisr)begin
+            if(humansetr)begin
                 if(led==16'b1000_0000_0000_0000)begin
                     movedone=1;
                     humanisr=0;
